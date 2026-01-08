@@ -11,6 +11,7 @@ const genres = [
 
 const lessons = [
   {
+    id: '1',
     title: 'Intermediate Salsa Partnerwork',
     genre: 'Salsa On2',
     price: 20,
@@ -23,6 +24,7 @@ const lessons = [
     date: { day: 'Fri, Oct 24', time: '7:00 PM - 9:00 PM' },
   },
   {
+    id: '2',
     title: 'Sensual Bachata Masterclass',
     genre: 'Bachata',
     price: 25,
@@ -35,6 +37,7 @@ const lessons = [
     date: { day: 'Sat, Oct 25', time: '2:00 PM - 5:00 PM' },
   },
   {
+    id: '3',
     title: 'Ladies Styling & Movement',
     genre: 'Styling',
     price: 15,
@@ -46,6 +49,7 @@ const lessons = [
     date: { day: 'Sun, Oct 26', time: '11:00 AM - 12:30 PM' },
   },
   {
+    id: '4',
     title: 'Beginner Salsa Bootcamp',
     genre: 'Salsa On1',
     price: 20,
@@ -57,6 +61,7 @@ const lessons = [
     date: { day: 'Mon, Oct 27', time: '6:30 PM - 8:30 PM' },
   },
   {
+    id: '5',
     title: 'Intro to Zouk Flow',
     genre: 'Zouk',
     price: 22,
@@ -69,6 +74,7 @@ const lessons = [
     date: { day: 'Tue, Oct 28', time: '8:00 PM - 9:30 PM' },
   },
   {
+    id: '6',
     title: 'Advanced Shines & Footwork',
     genre: 'Salsa On2',
     price: 10,
@@ -116,8 +122,8 @@ export default function LessonList() {
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-16">
-          {lessons.map((lesson, idx) => (
-            <LessonCard key={idx} {...lesson} />
+          {lessons.map((lesson) => (
+            <LessonCard key={lesson.id} {...lesson} />
           ))}
         </div>
         <div className="flex items-center justify-center pb-12">

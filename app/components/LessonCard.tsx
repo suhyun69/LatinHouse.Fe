@@ -1,4 +1,7 @@
+import Link from 'next/link';
+
 interface LessonCardProps {
+  id: string;
   title: string;
   genre: string;
   price: number;
@@ -18,6 +21,7 @@ interface LessonCardProps {
 }
 
 export default function LessonCard({
+  id,
   title,
   genre,
   price,
@@ -29,7 +33,7 @@ export default function LessonCard({
   const instructorNames = instructors.map(i => i.name).join(' & ');
 
   return (
-    <div className="group flex flex-col sm:flex-row bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+    <Link href={`/lessons/${id}`} className="group flex flex-col sm:flex-row bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40 cursor-pointer">
       <div className="relative w-full sm:w-[180px] shrink-0 h-48 sm:h-auto bg-zinc-900 overflow-hidden">
         <img
           alt={title}
@@ -83,10 +87,10 @@ export default function LessonCard({
             </div>
           </div>
         </div>
-        <button className="mt-1 w-full flex items-center justify-center rounded-xl h-10 bg-primary text-white shadow-md shadow-primary/20 hover:bg-orange-600 hover:shadow-lg hover:shadow-primary/30 text-sm font-bold transition-all duration-300">
+        <div className="mt-1 w-full flex items-center justify-center rounded-xl h-10 bg-primary text-white shadow-md shadow-primary/20 hover:bg-orange-600 hover:shadow-lg hover:shadow-primary/30 text-sm font-bold transition-all duration-300">
           Book Now
-        </button>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
