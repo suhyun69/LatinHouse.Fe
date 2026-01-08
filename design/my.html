@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SalsaBeats - User Profile</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#FF6B35", 
+              "primary-light": "#331800", // Darker for dark mode backgrounds
+              "secondary": "#FFFFFF", // White text for headings in dark mode
+              "background-light": "#050505", // Very dark background
+              "card-bg": "#121212", // Slightly lighter card background
+              "text-main": "#E5E5E5", // Light gray for main text
+              "text-muted": "#9CA3AF", // Muted gray
+              "accent-green": "#10B981",
+              "accent-blue": "#3B82F6",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"],
+              "body": ["Noto Sans", "sans-serif"],
+            },
+            boxShadow: {
+                'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.5)',
+                'glow': '0 4px 20px -2px rgba(255, 107, 53, 0.25)',
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light font-display antialiased text-text-main overflow-x-hidden selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="flex items-center justify-between whitespace-nowrap px-6 md:px-12 py-4 bg-card-bg/80 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-white/5">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3">
+<div class="size-10 text-primary p-1.5 bg-orange-500/10 rounded-xl">
+<svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+</svg>
+</div>
+<h2 class="text-xl font-extrabold tracking-tight text-white">SalsaBeats</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-text-muted hover:text-primary transition-colors" href="#">Find Lessons</a>
+<a class="text-sm font-semibold text-text-muted hover:text-primary transition-colors" href="#">Instructors</a>
+<a class="text-sm font-semibold text-text-muted hover:text-primary transition-colors" href="#">Events</a>
+<div class="relative group">
+<a class="text-sm font-bold text-primary" href="#">My Profile</a>
+<div class="absolute -bottom-[21px] left-0 w-full h-1 bg-primary rounded-t-full"></div>
+</div>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center relative">
+<span class="material-symbols-outlined absolute left-3 text-gray-500">search</span>
+<input class="pl-10 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-full text-sm text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 w-64 transition-all" placeholder="Search classes..."/>
+</div>
+<div class="flex items-center gap-3 pl-6 border-l border-white/10">
+<div class="text-right hidden md:block">
+<p class="text-sm font-bold leading-none text-white">Mateo R.</p>
+<p class="text-xs text-text-muted mt-1">Instructor</p>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-11 ring-2 ring-card-bg shadow-lg cursor-pointer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6a8mCzpSwe0ywKEs5Vw4crl-H0366xfEVz6bhpNZCrzAgiJxzOdxVTMjTm9wI4M-0aUkehp6no5aBzPFiTt5DKPl48dwjf3txyTi_czWbXZqU9wZnLexQi834EUpbgD6qlcSWTwk4Yp3lCO9d32ue1zGmB0-aj2EFWxgOgepuoOvSXQkPHzxhlXeg_u46hpj1UAo9hDRuYowVVZ8v2oBdiVR8lhSV4O2js7W8R6QLidVfyQZs_Ap-uFyIFZ8Hw7jNy7JjZe-YRsE");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full max-w-[1280px] mx-auto px-4 md:px-8 py-8 md:py-12">
+<section class="relative bg-card-bg rounded-3xl p-8 shadow-soft mb-10 overflow-hidden border border-white/5">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-bl-[100px] -z-0 opacity-50"></div>
+<div class="absolute bottom-0 left-10 w-32 h-32 bg-orange-600/10 rounded-full -z-0 filter blur-3xl"></div>
+<div class="relative z-10 flex flex-col lg:flex-row gap-8 items-start lg:items-center justify-between">
+<div class="flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left w-full lg:w-auto">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-2xl size-36 shadow-lg rotate-3 border border-white/5" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALfcV1HSBW8aV6HCruqHIlEm75lgxBsvHVtcuR-sDlzD5NMpMTp0hk4klTQsF4aK1WjNHiT6XFNCujMWs3XcXsdanFkC0idfrILP4ppF9Z3TcjNSSSn_B7EVC6XPptSsVHrW7KLwlVgaM730be3U2ZSMFgHIEequq0q_2wKo78NtNdKoShtP4KeHQB66R5IVYklfTOHn-3BeEWNbx5RAPHgsBYiKyC5f2GlO9YNTkfk1ERjc_5Mt_oNqgidCjTgcA3R4V8grVvXis");'></div>
+<div class="absolute -bottom-3 -right-3 bg-card-bg p-1.5 rounded-full shadow-md border border-white/5">
+<div class="bg-primary text-white p-1.5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<h1 class="text-3xl md:text-4xl font-extrabold text-secondary tracking-tight">Mateo Rodriguez</h1>
+<p class="text-text-muted font-medium flex items-center justify-center md:justify-start gap-2">
+<span class="text-primary/90">@salsa_mateo</span>
+<span class="size-1.5 bg-gray-600 rounded-full"></span>
+<span class="material-symbols-outlined text-[18px]">location_on</span> Miami, FL
+                        </p>
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2">
+<span class="px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wide border border-orange-500/10">Instructor</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs font-bold border border-white/5">Salsa On2</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs font-bold border border-white/5">Bachata</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-6 w-full lg:w-auto">
+<div class="flex items-center justify-center lg:justify-end gap-8 md:gap-12">
+<div class="text-center">
+<p class="text-2xl font-black text-secondary">42</p>
+<p class="text-xs font-bold text-text-muted uppercase tracking-wider mt-1">Classes</p>
+</div>
+<div class="w-px h-10 bg-white/10"></div>
+<div class="text-center">
+<p class="text-2xl font-black text-secondary">1.2k</p>
+<p class="text-xs font-bold text-text-muted uppercase tracking-wider mt-1">Students</p>
+</div>
+<div class="w-px h-10 bg-white/10"></div>
+<div class="text-center">
+<p class="text-2xl font-black text-secondary">15</p>
+<p class="text-xs font-bold text-text-muted uppercase tracking-wider mt-1">Learning</p>
+</div>
+</div>
+<div class="flex gap-3 justify-center lg:justify-end">
+<button class="flex items-center gap-2 px-6 py-2.5 bg-transparent border border-white/20 hover:border-primary text-text-main hover:text-primary font-bold rounded-xl transition-all shadow-sm hover:shadow-md hover:bg-white/5">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                            Share
+                        </button>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-primary hover:bg-orange-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                            Edit Profile
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<div class="flex items-center gap-8 mb-8 border-b border-white/10 px-2 overflow-x-auto">
+<a class="flex items-center gap-2 pb-4 border-b-2 border-primary text-primary font-bold" href="#">
+<span class="material-symbols-outlined filled">school</span>
+                Teaching Dashboard
+            </a>
+<a class="flex items-center gap-2 pb-4 border-b-2 border-transparent text-text-muted hover:text-secondary font-semibold transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+                My Schedule
+            </a>
+<a class="flex items-center gap-2 pb-4 border-b-2 border-transparent text-text-muted hover:text-secondary font-semibold transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+                Students
+            </a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">local_activity</span>
+                        Lessons You Teach
+                    </h3>
+<button class="flex items-center gap-1 text-sm font-bold text-primary hover:text-orange-400 transition-colors bg-orange-500/10 px-3 py-1.5 rounded-lg border border-primary/20 hover:bg-orange-500/20">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Create New
+                    </button>
+</div>
+<div class="group bg-card-bg p-5 rounded-2xl shadow-soft hover:shadow-glow border border-white/5 hover:border-orange-500/30 transition-all duration-300">
+<div class="flex flex-col sm:flex-row gap-5">
+<div class="w-full sm:w-40 h-40 sm:h-32 rounded-xl bg-cover bg-center shrink-0 shadow-sm group-hover:scale-[1.02] transition-transform duration-500" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnp2ZeBZX1TU-6qzA0KYzhE09Vw6Mlv_J1HnMn7xkcLaMwdQZ1SiXmNrCVzzjJGg5bAqmRj0eBvmzU9DPKEUexECSi7kfI_jsX-4of_Mr_i0zZW59rNL5_ltTVKYN-pLJYoMvajQThOxy9KcDVVACYeBSaQXThvIJsBtI9CgjrWfyUQERW0oIKv-SCqC9rxZqTMLJdVy4UC9Vx3k6cuUk2AsmoKKvdbPTAYSaqmEJaxzrwT3xeiSFniV4cwX3OwIxVr1z0XXNx6IU");'></div>
+<div class="flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-lg font-bold text-secondary group-hover:text-primary transition-colors">Intermediate Salsa On1</h4>
+<span class="px-2.5 py-1 rounded-lg bg-green-500/10 text-green-400 text-xs font-bold uppercase tracking-wide border border-green-500/20">Upcoming</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 mb-3">
+<div class="flex items-center gap-2 text-sm text-text-muted">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span class="font-medium text-text-main">Mon, Oct 24</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-text-muted">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span class="font-medium text-text-main">19:30 - 20:30</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-text-muted sm:col-span-2">
+<span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span>Dance Fusion Studio, Room A</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-white/5">
+<div class="flex -space-x-3 hover:space-x-1 transition-all">
+<img alt="Student" class="w-8 h-8 rounded-full border-2 border-card-bg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7cRxAjcWaxYwe3MIc3CJdVDnZXgSbpHTBmnSuQhKwnNx-wPNhVYqU6gO6PTXcFwqf9IKKqjLo6m9ipPp4oL8y1tuBEklb1RMJE4GKsV9zUP9CDPcvpaAZL_dBr0uY6xizPdhV7ipzctEn6vU_w8pW3ehclScv2cOUfg7UZ20fEr99jaYR0-hWqZacHlhiKagg-k3d0YaWDIVxFXu0v6AtlW2-MKzpu9kwOJes67iDZ5AOoYhL3VF0sjkAY53GE16g0Ux_GaK1xrg"/>
+<img alt="Student" class="w-8 h-8 rounded-full border-2 border-card-bg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ubGr34d3Q3sWwnIA-zp1sBa3WjpFEplb-TAyu_rnKOXO03sY4zPGzG0ptv4CYiHHtb1yBvAhZmnAHgMFY8ydM5yBcURs-sEkiqmu_Zlf-kvXngHZxjEndjCzxvdA7Hg9tcfQseFC2Y6LG34rwFAJ3RPgqRxs4_lRAYxsWeAD9bEjbIzZVsdkJlX5v9zV2Pamt3OEzWv1Z-00VJNGwlrJMXiDw6uIUBcs10id7dWmT_4Yp2wMS_5e32NoDz6NzpBXsPodA4ohdYg"/>
+<img alt="Student" class="w-8 h-8 rounded-full border-2 border-card-bg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHY24_MKsXWGTa14zD476SvwqQEbfaFDvVRa_T9yL0mWKMLclBa54IB7Wr-UhH7SPmHy8gs7EABsIdelLw2IXPa-pFk3ZnVhUZXfMYkj_SznpPi7dW252ZD_vKSYo_iFqJyPc55NTUvpjpRjEF1KzB2mTUyGD7mtd5Hkfq-szjqbkO9vvd-7AYmXun_OWP5QgwJOc4MHQYxFoCSy4Bz-9BdkQ6Yvuiyu03FRUjTGPEks1GD_7RF7SrxNq3siBIRYhQP69o5XGaen0"/>
+<div class="w-8 h-8 rounded-full border-2 border-card-bg bg-white/10 text-white text-[10px] font-bold flex items-center justify-center shadow-sm">+12</div>
+</div>
+<button class="text-sm font-bold text-primary hover:text-orange-400 hover:underline">Manage Class →</button>
+</div>
+</div>
+</div>
+</div>
+<div class="group bg-card-bg p-5 rounded-2xl shadow-soft hover:shadow-glow border border-white/5 hover:border-orange-500/30 transition-all duration-300">
+<div class="flex flex-col sm:flex-row gap-5">
+<div class="w-full sm:w-40 h-40 sm:h-32 rounded-xl bg-cover bg-center shrink-0 shadow-sm group-hover:scale-[1.02] transition-transform duration-500 grayscale group-hover:grayscale-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDt9TJQJDWoa4YarPbNGRpQ-LHQAiYnaFR9yoNp18Mf3wiM6MyAbYQIuDJZ4GmquyA5LqJ3m9FgUA2YKDpz882tgTkTu_nNgv2F5UPrM6lsyHB19sLQ12aSaXw6HB8fzMEhLBWSf7jKp3nNkmM9xG_wtqrkHTyPs_ku6sV-It1k4Jfvi5jJ0t2wbLpNg5te8psvMBdyr1Cl-6Qs5D4VfWw-63bNHn6vnRuiBpx9YC3C-93VFK1wfPZBsuafpU3Szfv0mHB1osneYyQ");'></div>
+<div class="flex flex-col flex-1 justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-lg font-bold text-secondary group-hover:text-primary transition-colors">Bachata Sensual Basics</h4>
+<span class="px-2.5 py-1 rounded-lg bg-white/5 text-gray-400 text-xs font-bold uppercase tracking-wide border border-white/10">Completed</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 mb-3">
+<div class="flex items-center gap-2 text-sm text-text-muted">
+<span class="material-symbols-outlined text-[18px] text-gray-500">calendar_today</span>
+<span class="font-medium text-text-main">Wed, Oct 19</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-text-muted">
+<span class="material-symbols-outlined text-[18px] text-gray-500">schedule</span>
+<span class="font-medium text-text-main">18:00 - 19:00</span>
+</div>
+<div class="flex items-center gap-2 text-sm text-text-muted sm:col-span-2">
+<span class="material-symbols-outlined text-[18px] text-gray-500">location_on</span>
+<span>Dance Fusion Studio, Room B</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-3 border-t border-white/5">
+<div class="flex -space-x-3 hover:space-x-1 transition-all">
+<img alt="Student" class="w-8 h-8 rounded-full border-2 border-card-bg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKuevECLhv6xc-FWz25cP7MXvSOYunlzSW_dGFP-MEzKt1mwS_62F-w-hM7Ho7woz1-QUFkeaGWIedaxoh46y0K6BRc3mqdT2O3nAJGullRnVNvpcQYZTxLDdwhOWEWMrxjk3rnVjYIhpEKwWtJX2kQN6PGgdAnpdsH0puxpIwUUuTAsqqsUgOA7WfdWkIZmQIIyZp6hWMYg0ibJ00jMhPidP6FDKn2KhgRDhhKZ0MUoFYPJCbUenAmHUdUwFqAwa7gr94rMS9zDc"/>
+<img alt="Student" class="w-8 h-8 rounded-full border-2 border-card-bg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBksh16A2aigh61wOQys-yMPixS_R9JqgNFF82_RPYtpzr91c5lz-rG6hEm8Rvv41xPTjjg3asUtreRna85t1A4DFE6ruXqKf0YcQKLwubCsJMXW1gGh1A4M_SomVxVi3SZ-la2TnyjzF80AwGLRoatGn_i6Q9b5l8GeH1KxYGYt2SJnu3lpOaqUVo3E_9HfulFR2aHu-XIsKcI69SoUgA4VB11thLjXCp6zKfz9Hj9xAgE7HNcTHri2gK4uf-KXl3U5VueLkyLJSk"/>
+<div class="w-8 h-8 rounded-full border-2 border-card-bg bg-white/10 text-white text-[10px] font-bold flex items-center justify-center shadow-sm">+18</div>
+</div>
+<button class="text-sm font-bold text-text-muted hover:text-primary transition-colors">View Report</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-8">
+<div class="bg-card-bg p-6 rounded-3xl shadow-soft border border-white/5">
+<div class="flex items-center justify-between mb-5">
+<h3 class="text-lg font-bold text-secondary">Learning Schedule</h3>
+<a class="text-xs font-bold text-primary hover:underline" href="#">See All</a>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-4 p-3 rounded-xl hover:bg-orange-500/10 transition-colors cursor-pointer group">
+<div class="size-14 rounded-xl bg-cover bg-center shrink-0 shadow-sm" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARUoiYhF7g4gDQ0tUWcATIPjhgvSiy8qTPJ1gDiBl69kcjlono5qIZh0tpnfdyfsEXub0iHSL5FyuLysEa1k8HSEpj1Hf0IlLruh31HtWuKj0uJSCNRa_t3WOdURj2Bfy2ukhEem_wKUwN015zSa6uNZPlwgQwxfRBuFLN6jIKRqzzWicKzDi0opVAXJCSsB9ZyRBHPXDdJnq56Egj0mOvFgiKHGLRDRJ--mq2RVUwesEF4zcnU8P1lfRW3GzHVWxOXAeCUhMUN8Y");'></div>
+<div class="flex flex-col flex-1 min-w-0 justify-center">
+<p class="text-sm font-bold text-secondary group-hover:text-primary truncate transition-colors">Cuban Salsa Styling</p>
+<p class="text-xs text-text-muted font-medium mt-1">Fri, Oct 28 • 20:00</p>
+<div class="flex items-center gap-1.5 mt-1.5">
+<div class="size-4 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRwMkEL-zX__mwnaAxzAxr_lKCt7QXUuUwjSNw0yan8zW1ffl5MaLCLii_S524OU_QaTTv9Um-hUKNEeDAV6vFWpUYaq6Hn5wdiFxLzDZMmjcjBvfufbnZn5GgEEc78zH7yxbacp1rTj-c1FBmHCc4zMZWneYaYJhAf74MEv5gCgJVOiEQWRZ6MZ-QB0cO7V62tqjMn7K_iMlBNSMMJb0BORLKxfvpMogEo65q39YYoNRtRdrUTjAvlcfYuOgaAgsa8z6-7kgX-9A");'></div>
+<span class="text-[10px] font-bold text-text-muted uppercase">Instr. Alejandro</span>
+</div>
+</div>
+<div class="flex items-center self-center">
+<div class="size-2 rounded-full bg-green-500"></div>
+</div>
+</div>
+<div class="flex gap-4 p-3 rounded-xl hover:bg-orange-500/10 transition-colors cursor-pointer group opacity-60 hover:opacity-100">
+<div class="size-14 rounded-xl bg-cover bg-center shrink-0 shadow-sm grayscale" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdP7q7-Tmfw-I3FUFbiO0a4fU0MmFj9Lk94UqwxYMK8o6bB5kMsCoLKV414HNzCrOPbwRR20c5X1AOksyhU3iYv4ucoXASoO4KOKcbvoYHbcQDjjh3vAT5VXwJrjE2B-8zTiwne-_L-JTmj7ze9HWee3QIWT4srtyPaSAHYaLXh_wzhdQmq1L2RwmWIUN_lubfgnAi_Vsi4VNIMfLLHmQLU0UiDcZp_DBilSGFvAfS9M510IKw2sIOlBlrPaunQ6vvAKQovxP7IEg");'></div>
+<div class="flex flex-col flex-1 min-w-0 justify-center">
+<p class="text-sm font-bold text-secondary group-hover:text-primary truncate transition-colors">Musicality Workshop</p>
+<p class="text-xs text-text-muted font-medium mt-1">Sat, Oct 15 • 14:00</p>
+<div class="flex items-center gap-1.5 mt-1.5">
+<div class="size-4 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlWEo7NwtCOjrKWplff_1HmdWI3PPBsYDxegZSiWmf1ocPcnSYJpR3nkZxpuHL1U3h2DQbt6oAV7jNBfjRGkvewVHOq1BlWnCCjAFpODymerNUNKjWj0wrmIGfudBusdkmmyOk9jOKwIUPg4pjwt2gge749Ws_E5IGrVl_SQR3HvcwrH2pZnbhVn_IihGCfzESJorwZ9th8PaGnMWb8Liiq-lc4m_DaK1FlfsY3Wllxr1myjaIINjGbt0mzjT0bJXegDEK3EUPPeM");'></div>
+<span class="text-[10px] font-bold text-text-muted uppercase">Instr. Maria</span>
+</div>
+</div>
+<div class="flex items-center self-center">
+<span class="material-symbols-outlined text-[16px] text-gray-500">check</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-5 py-2.5 rounded-xl border border-dashed border-white/20 text-sm font-bold text-text-muted hover:text-primary hover:border-primary hover:bg-orange-500/10 transition-all">
+                        Find More Classes
+                    </button>
+</div>
+<div class="bg-gradient-to-br from-card-bg to-orange-900/20 p-6 rounded-3xl shadow-soft border border-white/5">
+<h3 class="text-lg font-bold text-secondary mb-5">Recent Students</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex items-center gap-4">
+<div class="relative">
+<img alt="Leslie" class="h-10 w-10 rounded-full object-cover ring-2 ring-card-bg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALCn0MkFgicbskgtglUln2Hbpmq3aVLxlu_PDQ_gKJI80Rq_uP33HFJomCmedhPLcd3ddBaCRvuok-5VEfh-Bx8GrXf8ldwrgps50Nm8iOSfFcrywEE_lmdnkZLEN_iRAxGpv-0VD77-c64_6ZFmZRDqJbhqaY5BgxGY-qyJjYAsvBz5jqFDu1K2F_uhjVWg3tH0obBky6ya6nrwE8RD_b3PQCSmtwKAdKBJhEq9VqZh8w_1TvJX4gvEgT-ijI-XQAdDQZiRlCziU"/>
+<div class="absolute bottom-0 right-0 size-2.5 bg-green-500 border-2 border-card-bg rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-secondary truncate">Leslie Alexander</p>
+<p class="text-xs text-text-muted truncate">Salsa On1 • Last week</p>
+</div>
+<button class="text-gray-500 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">chat</span></button>
+</li>
+<li class="flex items-center gap-4">
+<div class="relative">
+<img alt="Michael" class="h-10 w-10 rounded-full object-cover ring-2 ring-card-bg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWDy22jsVu4RZYvx-jTGmjKFrEp9XJyTdjuutyyQ5pOgCY978JmWqf-iHK3XHEdtNdaHRg78GXU5rSNKNEuxvSLTjJEnzCoxgOOhE1AQ0606ch_osPR_q_XNvi8xujq5v0D2hl1laFjKllYVSPvUYzhdC0Hj_YRhYOZowH9X14njmPF2wpbOHxRF--Khq6ka284rXj-fEaKeQ6cUJwhmDdtNveLlRnXVAQSVRUgW56HMWQTsjbmwdyIFxT2Jpsm4SjV_sOxW6g7yU"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-secondary truncate">Michael Foster</p>
+<p class="text-xs text-text-muted truncate">Bachata • Yesterday</p>
+</div>
+<button class="text-gray-500 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">chat</span></button>
+</li>
+<li class="flex items-center gap-4">
+<div class="relative">
+<img alt="Dries" class="h-10 w-10 rounded-full object-cover ring-2 ring-card-bg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbtUM8XdjBPxeXWKJVjI7ubF_9MLP7lFlbYK47Q9bD0dXV0lbSzNgcnoeBG81XRFSCb-as8YQ96wOJyvOSBGLUlLXVVjSYAhVuxxoExkNnbZgQt9I2mdcUGjyHXo7YWkBbaDdjMVZMRCEKbUmqIAd2pMY__rP-4inaekltGgNWi5NUFuXtpBuxEB4JPTeYglmrS2dCAt3aMtmweeDRy20UUuQdwTSDNRxI6--xNupQYIdED7oXDBgMUynmE231T4L-DPjnAO2KQBs"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold text-secondary truncate">Dries Vincent</p>
+<p class="text-xs text-text-muted truncate">Salsa On1 • 2 weeks ago</p>
+</div>
+<button class="text-gray-500 hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">chat</span></button>
+</li>
+</ul>
+<button class="mt-5 w-full text-center text-xs font-bold uppercase tracking-wider text-primary hover:text-orange-400 transition-colors">View All Students</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

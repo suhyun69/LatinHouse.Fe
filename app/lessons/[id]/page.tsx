@@ -14,11 +14,13 @@ const lessons = [
     imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA7eqZzEbzAcsy__oad5yCC6SiK5KBY1ni5QfdJGHlQjB21tE3CucaoMR9BVpMfkwExlpvN1bpBNeYfrhsoIXHhv3u9WX5xAIz8o7EUbWmWpCUmXE3bvNG8k1OAjPraoE1zLOnJHwy1ER8IzH_d0npXFQo903jewpgcpUoC8CheZ0vbLCxv--WByYv7nXabPwU2mzQtXRVZlwlQpabprf6fbt_Fy3hXN4SkG0OnFamo3vrEy68fryjkfMOSY91K2V4LCwHd40y14Go',
     instructors: [
       {
+        id: 'marco-rivera',
         name: 'Marco Rivera',
         role: 'Lead Instructor (Salsa)',
         imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUZA_nUqB8X9IwCkQhATa6ybKFuDp329kCoYTSBMHyCTd6cPulFs9TtlfRfuCVDs-3zMSskWEBWvobpRmfvS0SWtBOJvgwLblpbc0xLFy-qQjVvntQwbrlMlJiPufjpk1txjYZw_nzLNxyzsu-uOoLBeVAKheUQp1v-cII2WP19Yz8HkgaMaJUtXZSiHcP6ZHHfUq99aCdF6qrK9YFIq2rD1n-ni7NgRR0lO_6xKZiCYu1aMBwQlhaTHvLShUsrHYTRGVYVq9iO84'
       },
       {
+        id: 'elena-cruz',
         name: 'Elena Cruz',
         role: 'Assistant (Bachata)',
         imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcfXR_Pa3dk6zhVrmAxrrDkQVedyLMc5mpwEqRcflYsUG4iXuWIjAj-WpwvOQYUwsgB-yu2Nh05hK4KNNwkmNekgEmx5IQK8Rh7QsA-vJcu1dtAyZUWfJ8U37Cmy0ERMQUR8aKKbvvyVtB_VsFloyFDTnaT7Gb9N0U-pSItyC1TsvhY41yn_cI9ycp3MI8ksDiC4E_zqdrpkxNY64RCVeKdCGckeVYveF68JKPSYIfa5ts2332I3zNtN6gktDxSoTG8Ii2v-gyY3U'
@@ -49,7 +51,7 @@ const lessons = [
     price: 25,
     imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBzZDC2JjVAvUDC0Ug1RfBt51BiLr6DCnzIVXwS9U7LxM01gSEmOk9_ojQsKTBa0i1jqt_LCs2Gfhq2CklcTxCLlKIzohGcJOkI_OYWQupXaHjtHJlQ02_bpOpDuC0jVJBI3dAK3Z2ahiue3fte0KShxPJnrS1rSW2IXqq6c_FB4qJCNq9wMQr1msmgGPfg0XLg8Ppd7r--svgtupoNQFgZAiuTz4qEkIvvYSqJzxKQPfG--cQ4U0w1xMZGceblnHtFA4eT4PEdVl4',
     instructors: [
-      { name: 'Leo', role: 'Lead Instructor', imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAEkWHakjfR-lXAg_eFX_FluQx364-d_cW15M-PVD1RuWDAzPL3_FgQL4aS50yVrwcpHW-aaIGoubGPCuDK9kMVIh-90C1oRr-URV_9J0Ab45reW4jj6pLtOU0gkclMCkh0iiVsxXpNGilhscB-lo6L4HePwiPNey99p4hxx3N7Y84lOEgiSrnWNAWdYp7G37lAEN-rsRYs1mZaRH3DKILqVl7pi3a4ERpvxOTjXNZ0YcGNjtu1CgEt3ljjl0Q0Nz5bWKzmyRm2CNA' },
+      { id: 'leo', name: 'Leo', role: 'Lead Instructor', imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAEkWHakjfR-lXAg_eFX_FluQx364-d_cW15M-PVD1RuWDAzPL3_FgQL4aS50yVrwcpHW-aaIGoubGPCuDK9kMVIh-90C1oRr-URV_9J0Ab45reW4jj6pLtOU0gkclMCkh0iiVsxXpNGilhscB-lo6L4HePwiPNey99p4hxx3N7Y84lOEgiSrnWNAWdYp7G37lAEN-rsRYs1mZaRH3DKILqVl7pi3a4ERpvxOTjXNZ0YcGNjtu1CgEt3ljjl0Q0Nz5bWKzmyRm2CNA' },
     ],
     location: { studio: 'The Loft BK', address: 'Brooklyn', city: 'New York' },
     date: { day: 'Sat, Oct 25', time: '2:00 PM - 5:00 PM' },
@@ -155,8 +157,8 @@ export default async function LessonDetailPage({ params }: { params: Promise<{ i
                 Your Instructors
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {lesson.instructors.map((instructor, idx) => (
-                  <div key={idx} className="bg-surface border border-zinc-800 shadow-sm p-5 rounded-2xl flex items-center gap-4 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer group">
+                {lesson.instructors.map((instructor) => (
+                  <Link key={instructor.id} href={`/instructors/${instructor.id}`} className="bg-surface border border-zinc-800 shadow-sm p-5 rounded-2xl flex items-center gap-4 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer group">
                     <div className="relative">
                       <img
                         alt={instructor.name}
@@ -171,7 +173,7 @@ export default async function LessonDetailPage({ params }: { params: Promise<{ i
                       <p className="text-white font-bold text-lg group-hover:text-primary transition-colors">{instructor.name}</p>
                       <p className="text-text-sub text-sm font-medium">{instructor.role}</p>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
