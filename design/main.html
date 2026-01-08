@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LatinSteps - Find Your Rhythm</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f45925",
+                        "primary-light": "#33150c", 
+                        "background-page": "#000000",
+                        "surface": "#121212", 
+                        "text-main": "#f9fafb", 
+                        "text-sub": "#9ca3af", 
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.8)',
+                        'soft-hover': '0 10px 30px -3px rgba(244, 89, 37, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-page min-h-screen flex flex-col text-text-main antialiased selection:bg-primary selection:text-white">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-white/10 bg-black/80 backdrop-blur-md px-6 md:px-10 py-4">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-text-main text-xl font-extrabold tracking-tight">LatinSteps</h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary text-sm font-bold border-b-2 border-primary leading-loose" href="#">Lessons</a>
+<a class="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="#">Instructors</a>
+<a class="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="#">Events</a>
+<a class="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-6">
+<label class="hidden lg:flex flex-col min-w-40 h-10 w-full max-w-[280px]">
+<div class="flex w-full flex-1 items-stretch rounded-full bg-zinc-900 border border-zinc-800 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="text-zinc-500 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 bg-transparent border-none focus:ring-0 text-sm px-3 text-text-main placeholder:text-zinc-600" placeholder="Search lessons..." type="text"/>
+</div>
+</label>
+<button class="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white hover:bg-orange-600 shadow-md hover:shadow-lg transition-all text-sm font-bold tracking-wide">
+            Log In
+        </button>
+</div>
+</header>
+<main class="flex-grow flex flex-col">
+<div class="w-full bg-background-page relative">
+<div class="px-6 md:px-20 lg:px-40 py-8">
+<div class="@container">
+<div class="flex flex-col md:flex-row gap-6 bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden relative min-h-[360px] items-center justify-start p-8 md:p-14 shadow-2xl shadow-orange-900/20" data-alt="Dark moody salsa dance floor with spotlights" style='background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0,0,0,0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYJ5acO-vzODQZNxWTUgBIeBIO9TkWRdL5TiL1b2cDrcPl8XFUrgx_PPMgpQq4SI0rJCkjM9SOKdMmiqNu6uNrR4N3iLTlHMQ4DO2r_5PbZTJnpB-MfSIYiHXqTIf93cLHxKhgS_HuppWI1Z4k8LcXngb7PL-M9uk1zguZ47P7edu_iZiMAxPGghbScDYzQ80vEgragYiY7NoBSmp1ft7Z2fMAVQdTAx-yFg5Xo7g3RaoXsjwZhYZ8LFwcFibHEVsliDDfQWCxzc0");'>
+<div class="flex flex-col gap-5 max-w-2xl z-10">
+<span class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs font-bold uppercase tracking-widest w-fit">Welcome to the floor</span>
+<h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight drop-shadow-sm">
+                            Find Your Rhythm <br/><span class="text-primary">In Your City</span>
+</h1>
+<p class="text-white/90 text-lg font-medium leading-relaxed max-w-lg drop-shadow-sm">
+                            Discover top-rated Salsa and Bachata classes from world-class instructors. Book your next lesson today.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-6 md:px-20 lg:px-40 py-2 flex-1 flex flex-col items-center bg-background-page">
+<div class="layout-content-container flex flex-col max-w-[1200px] w-full flex-1">
+<div class="flex flex-col gap-6 pb-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-white/10 pb-6">
+<div class="flex flex-col">
+<h2 class="text-text-main tracking-tight text-3xl font-bold leading-tight">Upcoming Lessons</h2>
+<p class="text-text-sub mt-1">Explore 24 classes available this week</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-semibold text-text-sub">Sort by:</span>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-zinc-800 hover:border-primary/50 text-text-main text-sm font-semibold shadow-sm transition-all">
+                            Date: Upcoming
+                            <span class="material-symbols-outlined text-[20px] text-primary">expand_more</span>
+</button>
+</div>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-4 scrollbar-hide snap-x">
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 shadow-lg shadow-primary/25 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[20px]">music_note</span>
+<span class="text-sm font-bold">All Genres</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface border border-zinc-800 text-text-sub hover:text-primary hover:border-primary hover:bg-white/5 px-5 transition-all">
+<span class="text-sm font-semibold">Salsa On1</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface border border-zinc-800 text-text-sub hover:text-primary hover:border-primary hover:bg-white/5 px-5 transition-all">
+<span class="text-sm font-semibold">Salsa On2</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface border border-zinc-800 text-text-sub hover:text-primary hover:border-primary hover:bg-white/5 px-5 transition-all">
+<span class="text-sm font-semibold">Bachata Sensual</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface border border-zinc-800 text-text-sub hover:text-primary hover:border-primary hover:bg-white/5 px-5 transition-all">
+<span class="text-sm font-semibold">Bachata Dominicana</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface border border-zinc-800 text-text-sub hover:text-primary hover:border-primary hover:bg-white/5 px-5 transition-all">
+<span class="text-sm font-semibold">Kizomba</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-16">
+<div class="group flex flex-col sm:flex-row bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative w-full sm:w-[180px] shrink-0 h-48 sm:h-auto bg-zinc-900 overflow-hidden">
+<img alt="Couple dancing salsa in a studio with warm lighting" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-MqFA4-2239uM1kPoypjF4C4GgMaQuOx9pS2iVlxsuNDoSFSikHdNgk2-7ThWGVXOkfI9bmCe4eS04_4AHhwspImIzS4JdGR4j9I0hQgpagdueDKu501EUsplLMt3TkxsPdn6Uae1hea--S6wHGMr50cAU87RwoxxAKbM_5XEhUkYhjxnhbRRfL_ANI7RFUdtSasAMyV7FIFI5rUOkGAPuQSD8UVU-DSe4ZeBm2gT-F0iNkBm5XDj9SiPRu4iLbv3mfxLwWLg4fE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-1 rounded-md bg-black/70 backdrop-blur border border-white/10 text-primary text-[10px] font-bold uppercase tracking-wider shadow-sm">Salsa On2</span>
+</div>
+<div class="absolute bottom-3 right-3 z-10">
+<span class="flex items-center justify-center h-7 px-2 rounded-lg bg-primary text-white text-xs font-bold shadow-lg">$20</span>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-3 flex-1 justify-between">
+<div>
+<h3 class="text-text-main text-lg font-bold leading-tight group-hover:text-primary transition-colors line-clamp-1">Intermediate Salsa Partnerwork</h3>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center -space-x-2">
+<img alt="Diego" class="size-8 rounded-full ring-2 ring-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEfJ2PHz3Ztyy83SCfHk6naOG_bQ5QHmalkedT7Sgqank5InEb3blPG4ZGjMfd-x6QEwCmM8nardAzAfHGdPbfJnWZtO38a1mZA5aV86C610uxfszT05r6Af588ugufv7P6NtOLCNk0vl28wIgPPqKjaSEYyptj4Tk-5KNN6ujKULIl_gA0Hw-mCtQ7nTtFLj9h_v2sFu0cKHcrbJR--5qQvcYrekPUmWsdb6nQl_ny_OkbyWenapYppY4i1zyuVDQSAHk9Bkva38"/>
+<img alt="Maria" class="size-8 rounded-full ring-2 ring-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV2w1ydNETaIsyHcKkNCp3GeT6tuPhLxjNEE4SX5hnNQ7Olt0hqAEI0t4g8f13uHA5F6bzXNBkH2O-_FFPnKCHKsdBxMCRrbrW-Ry9bK19AdgvPjC28up5rOIdxvfsaO4-6L_kj2SgJzD4xDUm6jasY6EdUOUl9JadoddjQ5GWyT55fsLV-CVwb63TEPhqJ5RUemmRSJgcYqKpUS-lmC6NdCvHIcSNgIZjrjkD5p90dYZ85_RxqBsLMUeKtfh36XHmXzm0WCWG0v8"/>
+</div>
+<span class="text-xs font-medium text-text-sub">Hosted by Diego &amp; Maria</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 border-t border-zinc-800 pt-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Empire Dance Studio</span>
+<span class="text-xs text-text-sub">Manhattan, NY</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">calendar_month</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Fri, Oct 24</span>
+<span class="text-xs text-text-sub">7:00 PM - 9:00 PM</span>
+</div>
+</div>
+</div>
+<button class="mt-1 w-full flex items-center justify-center rounded-xl h-10 bg-primary text-white shadow-md shadow-primary/20 hover:bg-orange-600 hover:shadow-lg hover:shadow-primary/30 text-sm font-bold transition-all duration-300">
+                            Book Now
+                        </button>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative w-full sm:w-[180px] shrink-0 h-48 sm:h-auto bg-zinc-900 overflow-hidden">
+<img alt="Bachata Sensual Class" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzZDC2JjVAvUDC0Ug1RfBt51BiLr6DCnzIVXwS9U7LxM01gSEmOk9_ojQsKTBa0i1jqt_LCs2Gfhq2CklcTxCLlKIzohGcJOkI_OYWQupXaHjtHJlQ02_bpOpDuC0jVJBI3dAK3Z2ahiue3fte0KShxPJnrS1rSW2IXqq6c_FB4qJCNq9wMQr1msmgGPfg0XLg8Ppd7r--svgtupoNQFgZAiuTz4qEkIvvYSqJzxKQPfG--cQ4U0w1xMZGceblnHtFA4eT4PEdVl4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-1 rounded-md bg-black/70 backdrop-blur border border-white/10 text-primary text-[10px] font-bold uppercase tracking-wider shadow-sm">Bachata</span>
+</div>
+<div class="absolute bottom-3 right-3 z-10">
+<span class="flex items-center justify-center h-7 px-2 rounded-lg bg-primary text-white text-xs font-bold shadow-lg">$25</span>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-3 flex-1 justify-between">
+<div>
+<h3 class="text-text-main text-lg font-bold leading-tight group-hover:text-primary transition-colors line-clamp-1">Sensual Bachata Masterclass</h3>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center -space-x-2">
+<img alt="Leo" class="size-8 rounded-full ring-2 ring-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEkWHakjfR-lXAg_eFX_FluQx364-d_cW15M-PVD1RuWDAzPL3_FgQL4aS50yVrwcpHW-aaIGoubGPCuDK9kMVIh-90C1oRr-URV_9J0Ab45reW4jj6pLtOU0gkclMCkh0iiVsxXpNGilhscB-lo6L4HePwiPNey99p4hxx3N7Y84lOEgiSrnWNAWdYp7G37lAEN-rsRYs1mZaRH3DKILqVl7pi3a4ERpvxOTjXNZ0YcGNjtu1CgEt3ljjl0Q0Nz5bWKzmyRm2CNA"/>
+<img alt="Kat" class="size-8 rounded-full ring-2 ring-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt6PzfdLnbMqIOGfTD4XXE81dgsQjb09GXnSxde1IG2m5bXodDhiZxcR5YUqnqoPCBKqv33RHSTNbDSXdPukf2SR5k8jFzfrFkTGQkGuSRHwbVU--9Il62lK_oEuWMyBycfCTKvljxa_prQZ8PzFUZDVSX8Ms0NK_qmf0i-IQ741-jFqdtm5l3Kk7QriNiHvY_kSDuyRuvD_2rCHZsnqWrb6P0ypaOjk2Gwc4SxqxIHg7oBN8Hmg4GpvEaPIqjsokX3dq1WHjNr7s"/>
+</div>
+<span class="text-xs font-medium text-text-sub">Hosted by Leo &amp; Kat</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 border-t border-zinc-800 pt-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">The Loft BK</span>
+<span class="text-xs text-text-sub">Brooklyn, NY</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">calendar_month</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Sat, Oct 25</span>
+<span class="text-xs text-text-sub">2:00 PM - 5:00 PM</span>
+</div>
+</div>
+</div>
+<button class="mt-1 w-full flex items-center justify-center rounded-xl h-10 bg-primary text-white shadow-md shadow-primary/20 hover:bg-orange-600 hover:shadow-lg hover:shadow-primary/30 text-sm font-bold transition-all duration-300">
+                            Book Now
+                        </button>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative w-full sm:w-[180px] shrink-0 h-48 sm:h-auto bg-zinc-900 overflow-hidden">
+<img alt="Ladies Styling Class" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMfXEQTh9J9wX1tO9a43M2f-tlQzVTeRDWHVysuEhTIWXsejf3VtyFqGjy2FVAbHygVRCQZmJDqUfayyOIsgY28K1PH8RyrPY30EG67c5Le0QwzMFU0dfBlZEUAMzqjv4dNFH9qUww6f2BvRM8UOJYwfHvSsE8ShFwIDJDJ2i9sn0ZO2696FccfuQ50pqc-o5A9B7j3nBNwVrPCVqSNzcWEYtXpq6m_VhHaiGBFDRMn-bsV5G8-wLOyK09B7bP2SrgNMKvbBWGE6g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-1 rounded-md bg-black/70 backdrop-blur border border-white/10 text-primary text-[10px] font-bold uppercase tracking-wider shadow-sm">Styling</span>
+</div>
+<div class="absolute bottom-3 right-3 z-10">
+<span class="flex items-center justify-center h-7 px-2 rounded-lg bg-primary text-white text-xs font-bold shadow-lg">$15</span>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-3 flex-1 justify-between">
+<div>
+<h3 class="text-text-main text-lg font-bold leading-tight group-hover:text-primary transition-colors line-clamp-1">Ladies Styling &amp; Movement</h3>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center -space-x-2">
+<img alt="Sofia" class="size-8 rounded-full ring-2 ring-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz6cDqHhuCnymiWT_5qaoh_dHGjQZyzZbaQZ7bRWH7h4Czd5YWYPpnoiBZGOwMY_dr1F4hXRGfzAQnE_dTKsroBEq5_y8wIXze6MRDUPsKJwDK6tIEF74_tuyyGYMCqCy0gBWFh0UEPMzedhUb-mHy4Q4i-YfKibYaiPUgZd5s9gf_EeZ9-hj3JMq0PcLTw5GGsD_GRZg3DDtnA1ZhDD7mAlCYl6Mt_zgjCNhUPeffJSZVAaK9h59MjbdQn-TKFbnXumJmmrrU_LM"/>
+</div>
+<span class="text-xs font-medium text-text-sub">Hosted by Sofia</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 border-t border-zinc-800 pt-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Pearl Studios</span>
+<span class="text-xs text-text-sub">Manhattan, NY</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">calendar_month</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Sun, Oct 26</span>
+<span class="text-xs text-text-sub">11:00 AM - 12:30 PM</span>
+</div>
+</div>
+</div>
+<button class="mt-1 w-full flex items-center justify-center rounded-xl h-10 bg-primary text-white shadow-md shadow-primary/20 hover:bg-orange-600 hover:shadow-lg hover:shadow-primary/30 text-sm font-bold transition-all duration-300">
+                            Book Now
+                        </button>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative w-full sm:w-[180px] shrink-0 h-48 sm:h-auto bg-zinc-900 overflow-hidden">
+<img alt="Beginner Salsa Class" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMKpJ7ltoZgJleo_V-MIjZEqPFJEx_Pc_1FcDi3PJu6SbkRsWhDhdUuAoNGz-r6pcM3BDXlSA8dbeW7A_SifzrsRP1DV0JOFwZuzRCC2oBUjf7I1hDxbk8ezt5zwt1Qg0IqeVXaCImQ2Q7LPnBB1o_bbfAz4oNV8pwFnHWrMq2BHWHQoOXYm20wOCkDZm-nvfky0twq_L1fvWAw14IxFC7RYXEGQUyRB94sJP4BLbJE8DeFj8spijNhUYOPgTjmtFevS_BNvfkG4E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-1 rounded-md bg-black/70 backdrop-blur border border-white/10 text-primary text-[10px] font-bold uppercase tracking-wider shadow-sm">Salsa On1</span>
+</div>
+<div class="absolute bottom-3 right-3 z-10">
+<span class="flex items-center justify-center h-7 px-2 rounded-lg bg-primary text-white text-xs font-bold shadow-lg">$20</span>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-3 flex-1 justify-between">
+<div>
+<h3 class="text-text-main text-lg font-bold leading-tight group-hover:text-primary transition-colors line-clamp-1">Beginner Salsa Bootcamp</h3>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center -space-x-2">
+<img alt="Carlos" class="size-8 rounded-full ring-2 ring-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2Bj2xrccfoQ1c9yTyv8gjBnAGSg4ssBYPLIEbqI2Yo6ho6eQPPI8FlXl0mzmO1NA8seEGxejZsf8qN3mIhkprjk_h2PSyetRRDF_Mc3a7aJVjx5FzbDi21hRa3SCwjZ2foONSVg5ZcnPrY_cml6ItOoRKpeczd2_2ZMc2Bsy6fjUGIV7gCJ63C8Ju3Fy4P6pO9u2ghpn1I-pH3bRFKnXecKzI9EMQ3RNjJCr3adCpecBB8s_MUh1xCTrSpYk9psGj796PLfxWV6o"/>
+</div>
+<span class="text-xs font-medium text-text-sub">Hosted by Carlos</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 border-t border-zinc-800 pt-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Latin Fever Studio</span>
+<span class="text-xs text-text-sub">Queens, NY</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">calendar_month</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Mon, Oct 27</span>
+<span class="text-xs text-text-sub">6:30 PM - 8:30 PM</span>
+</div>
+</div>
+</div>
+<button class="mt-1 w-full flex items-center justify-center rounded-xl h-10 bg-primary text-white shadow-md shadow-primary/20 hover:bg-orange-600 hover:shadow-lg hover:shadow-primary/30 text-sm font-bold transition-all duration-300">
+                            Book Now
+                        </button>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative w-full sm:w-[180px] shrink-0 h-48 sm:h-auto bg-zinc-900 overflow-hidden">
+<img alt="Zouk Flow Class" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9a_j2kqu20aM6yGe7cfidZgDezFFcC-ZCj7BZIlLyRAgEMtDX_JGOGw8YrQnuYqG6SzaEX0FqfWRRzxLplwgDyMFmHhfRxHDF0kmztyfpBk9XwIxtgSEpI38-YktS3ph-GMR7Eh-mIZksymeI7eSADD0yNT8sX7cJCtCuqQh1s5X5JBANuxNRW1PAkCOkdPYMp-4rjAN7I2P88IarAgmjQ5O1VIIpQy9ePXC1M65x-2jUGhgKhoSmAu78ILG2di8lRIkd-2AAywQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-1 rounded-md bg-black/70 backdrop-blur border border-white/10 text-primary text-[10px] font-bold uppercase tracking-wider shadow-sm">Zouk</span>
+</div>
+<div class="absolute bottom-3 right-3 z-10">
+<span class="flex items-center justify-center h-7 px-2 rounded-lg bg-primary text-white text-xs font-bold shadow-lg">$22</span>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-3 flex-1 justify-between">
+<div>
+<h3 class="text-text-main text-lg font-bold leading-tight group-hover:text-primary transition-colors line-clamp-1">Intro to Zouk Flow</h3>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center -space-x-2">
+<img alt="Alex" class="size-8 rounded-full ring-2 ring-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS4DSp9s7zckivx74CWczkZ8Ad8YTbZUFrVL3ZLMfRIeu4XuLLSg_ppb7HwEjwi8U-FTCUhTqRg7uidjHhI6WRnhbvGa4Ys-5a0---R3OPIfuwL08UDLn0hWDeUgrSFR_RRfLksrulH-Ns552qiUkcaQVkhrpDdMwXX38Hh3rGUPjOUrHTTs9Dx_T1ZUjB6qHSb5Mq0NW-mOEXzOZsHW5EY60QgrTRkCO3KRwy7QDCuaSNPrjJncrvihVQXK8t8_sVFtU77YslSdY"/>
+<img alt="Sarah" class="size-8 rounded-full ring-2 ring-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTadEvueGaqhY5E1ZmzPDeBO0eZWyfIDGGNDTv4G7rWJiW6GqXFzvTKPSbkLeDfHl-F2e36DLEUPpJcAr_Zw1aEuafLLrmjFf3he6rUCw4Pt5aqsrGjah-SC5TkQyDeSohuENMyba4ESo-tWTNcsxLImhRPjgClNUgUu1UUWYMk92OiQXEjDoum8f7Sv8wl41jfBSk73KydiRiXu_h61NLhmhlXS03v6E1b3qmYdTagStckdk9IB7g5ZGaBHw_O4Iqha8Kv_AxryE"/>
+</div>
+<span class="text-xs font-medium text-text-sub">Hosted by Alex &amp; Sarah</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 border-t border-zinc-800 pt-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Motion Arts Center</span>
+<span class="text-xs text-text-sub">Jersey City, NJ</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">calendar_month</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Tue, Oct 28</span>
+<span class="text-xs text-text-sub">8:00 PM - 9:30 PM</span>
+</div>
+</div>
+</div>
+<button class="mt-1 w-full flex items-center justify-center rounded-xl h-10 bg-primary text-white shadow-md shadow-primary/20 hover:bg-orange-600 hover:shadow-lg hover:shadow-primary/30 text-sm font-bold transition-all duration-300">
+                            Book Now
+                        </button>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative w-full sm:w-[180px] shrink-0 h-48 sm:h-auto bg-zinc-900 overflow-hidden">
+<img alt="Advanced Shines Class" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASIIjPy-FaywO9lDUm8Kh-gxhASr78JNfbgk6dPAX3Kwq833HK8Q5xtQbNsU1kyRSv7g-7DvDjkKbPuLAqf8LSOiPr27u2iL8g5GoYzaZfeAfrpRJ8KJ_H8KS3rh_o1-8QrFAA72-1uvVuaPwpkxUYkpBnxWSbJHpVFmcjg9-3neHASqswW0MQobyHa_7yqKZyCCzZCalWchPEt0FsDlI3js4plvwUWc5isVnMMfJB87KJgpSUnLtKpMiOwmCYRf1v3rtaYwA14oM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+<div class="absolute top-3 left-3 z-10">
+<span class="px-2 py-1 rounded-md bg-black/70 backdrop-blur border border-white/10 text-primary text-[10px] font-bold uppercase tracking-wider shadow-sm">Salsa On2</span>
+</div>
+<div class="absolute bottom-3 right-3 z-10">
+<span class="flex items-center justify-center h-7 px-2 rounded-lg bg-primary text-white text-xs font-bold shadow-lg">$10</span>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-3 flex-1 justify-between">
+<div>
+<h3 class="text-text-main text-lg font-bold leading-tight group-hover:text-primary transition-colors line-clamp-1">Advanced Shines &amp; Footwork</h3>
+<div class="flex items-center gap-3 mt-2">
+<div class="flex items-center -space-x-2">
+<img alt="Marco" class="size-8 rounded-full ring-2 ring-surface object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR11VK2nU3EPRlHT6fYLDTOvZ6sBrdJ9loPPzVH1t3pnFJqrdPSuQaA_vj7tSYnQbm0SlVOspCrAtmBwmCRqFC4rB292CiGXrRbWObSAc2DuuFLc-Cj9yIhJAh0nfZPdKA0802zDOJo6Y_4PBcarHvyXLQ5WpW9RiH8_CBPsZKf6vQP0eznHGc8JMxgHVK-3bBbv9kJBWc7x7H9Xo7ycDf69h8n9fVcs8yoYsMZR-_58xpUXzEW8relbFNXCTPdMEa_awT1BfrcMI"/>
+</div>
+<span class="text-xs font-medium text-text-sub">Hosted by Marco</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 border-t border-zinc-800 pt-3">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Yamulee Studio</span>
+<span class="text-xs text-text-sub">Bronx, NY</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">calendar_month</span>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-main leading-tight">Wed, Oct 29</span>
+<span class="text-xs text-text-sub">7:00 PM - 8:30 PM</span>
+</div>
+</div>
+</div>
+<button class="mt-1 w-full flex items-center justify-center rounded-xl h-10 bg-primary text-white shadow-md shadow-primary/20 hover:bg-orange-600 hover:shadow-lg hover:shadow-primary/30 text-sm font-bold transition-all duration-300">
+                            Book Now
+                        </button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center pb-12">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-surface border border-zinc-800 shadow-sm hover:shadow-md hover:border-primary hover:text-primary text-text-main text-sm font-bold tracking-wide transition-all">
+                    Load More Lessons
+                </button>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-black border-t border-white/10 py-12 px-6">
+<div class="layout-content-container max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-10">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 text-text-main">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xl font-extrabold tracking-tight">LatinSteps</span>
+</div>
+<p class="text-text-sub text-sm max-w-xs leading-relaxed">Connecting dancers with the best instructors worldwide. Find your rhythm today.</p>
+</div>
+<div class="flex gap-12 flex-wrap">
+<div class="flex flex-col gap-4">
+<h4 class="text-text-main font-bold text-sm uppercase tracking-wider">Company</h4>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">About Us</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Careers</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Blog</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-text-main font-bold text-sm uppercase tracking-wider">Support</h4>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Help Center</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Contact Us</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-text-main font-bold text-sm uppercase tracking-wider">Social</h4>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Instagram</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Facebook</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Twitter</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
