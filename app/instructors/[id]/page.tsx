@@ -217,10 +217,10 @@ export default async function InstructorProfilePage({ params }: { params: Promis
                   <span className="material-symbols-outlined text-primary">local_activity</span>
                   Lessons You Teach
                 </h3>
-                <button className="flex items-center gap-1 text-sm font-bold text-primary hover:text-orange-400 transition-colors bg-orange-500/10 px-3 py-1.5 rounded-lg border border-primary/20 hover:bg-orange-500/20">
+                <Link href="/create-lesson" className="flex items-center gap-1 text-sm font-bold text-primary hover:text-orange-400 transition-colors bg-orange-500/10 px-3 py-1.5 rounded-lg border border-primary/20 hover:bg-orange-500/20">
                   <span className="material-symbols-outlined text-[18px]">add</span>
                   Create New
-                </button>
+                </Link>
               </div>
               {instructor.lessons.map((lesson) => (
                 <div key={lesson.id} className="group bg-surface p-5 rounded-2xl shadow-soft hover:shadow-lg border border-zinc-800 hover:border-orange-500/30 transition-all duration-300">
