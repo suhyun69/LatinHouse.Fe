@@ -200,10 +200,10 @@ export default async function LessonDetailPage({ params }: { params: Promise<{ i
                     ))}
                   </div>
                 )}
-                <button className="w-full bg-primary hover:bg-orange-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/20 transition-all transform active:scale-[0.99] flex justify-center items-center gap-2">
+                <Link href={`/checkout/${id}`} className="w-full bg-primary hover:bg-orange-600 text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-primary/20 transition-all transform active:scale-[0.99] flex justify-center items-center gap-2">
                   <span>Book Now</span>
                   <span className="material-symbols-outlined">arrow_forward</span>
-                </button>
+                </Link>
               </div>
               <div className="p-8 bg-black/40">
                 <p className="text-white font-bold mb-4 flex items-center gap-2">
