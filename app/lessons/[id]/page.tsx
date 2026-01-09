@@ -1,68 +1,11 @@
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Link from 'next/link';
-
-// 실제 프로덕션에서는 DB나 API에서 가져와야 함
-const lessons = [
-  {
-    id: '1',
-    title: 'Intermediate Salsa & Bachata Bootcamp',
-    genres: ['Salsa', 'Bachata'],
-    level: 'Intermediate',
-    description: 'Master the fluid turns, musicality, and connection in this intensive weekend workshop designed for intermediate dancers looking to level up.',
-    price: 45,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA7eqZzEbzAcsy__oad5yCC6SiK5KBY1ni5QfdJGHlQjB21tE3CucaoMR9BVpMfkwExlpvN1bpBNeYfrhsoIXHhv3u9WX5xAIz8o7EUbWmWpCUmXE3bvNG8k1OAjPraoE1zLOnJHwy1ER8IzH_d0npXFQo903jewpgcpUoC8CheZ0vbLCxv--WByYv7nXabPwU2mzQtXRVZlwlQpabprf6fbt_Fy3hXN4SkG0OnFamo3vrEy68fryjkfMOSY91K2V4LCwHd40y14Go',
-    instructors: [
-      {
-        id: 'marco-rivera',
-        name: 'Marco Rivera',
-        role: 'Lead Instructor (Salsa)',
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUZA_nUqB8X9IwCkQhATa6ybKFuDp329kCoYTSBMHyCTd6cPulFs9TtlfRfuCVDs-3zMSskWEBWvobpRmfvS0SWtBOJvgwLblpbc0xLFy-qQjVvntQwbrlMlJiPufjpk1txjYZw_nzLNxyzsu-uOoLBeVAKheUQp1v-cII2WP19Yz8HkgaMaJUtXZSiHcP6ZHHfUq99aCdF6qrK9YFIq2rD1n-ni7NgRR0lO_6xKZiCYu1aMBwQlhaTHvLShUsrHYTRGVYVq9iO84'
-      },
-      {
-        id: 'elena-cruz',
-        name: 'Elena Cruz',
-        role: 'Assistant (Bachata)',
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcfXR_Pa3dk6zhVrmAxrrDkQVedyLMc5mpwEqRcflYsUG4iXuWIjAj-WpwvOQYUwsgB-yu2Nh05hK4KNNwkmNekgEmx5IQK8Rh7QsA-vJcu1dtAyZUWfJ8U37Cmy0ERMQUR8aKKbvvyVtB_VsFloyFDTnaT7Gb9N0U-pSItyC1TsvhY41yn_cI9ycp3MI8ksDiC4E_zqdrpkxNY64RCVeKdCGckeVYveF68JKPSYIfa5ts2332I3zNtN6gktDxSoTG8Ii2v-gyY3U'
-      },
-    ],
-    location: {
-      studio: 'Dance Fusion Studio',
-      address: '123 Rhythm Ave, Brooklyn',
-      city: 'New York Region',
-    },
-    date: {
-      day: 'Sat, Oct 28, 2023',
-      time: '14:00 - 18:00 (4 Hours)',
-    },
-    tags: ['Early Bird (-10%)', 'Group Discount Available'],
-    bankDetails: {
-      bankName: 'Chase Bank',
-      accountName: 'Latin Dance Hub LLC',
-      accountNumber: 'US12 3456 7890 1234 5678',
-    },
-  },
-  {
-    id: '2',
-    title: 'Sensual Bachata Masterclass',
-    genres: ['Bachata'],
-    level: 'Intermediate',
-    description: 'Deep dive into sensual bachata techniques and styling.',
-    price: 25,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBzZDC2JjVAvUDC0Ug1RfBt51BiLr6DCnzIVXwS9U7LxM01gSEmOk9_ojQsKTBa0i1jqt_LCs2Gfhq2CklcTxCLlKIzohGcJOkI_OYWQupXaHjtHJlQ02_bpOpDuC0jVJBI3dAK3Z2ahiue3fte0KShxPJnrS1rSW2IXqq6c_FB4qJCNq9wMQr1msmgGPfg0XLg8Ppd7r--svgtupoNQFgZAiuTz4qEkIvvYSqJzxKQPfG--cQ4U0w1xMZGceblnHtFA4eT4PEdVl4',
-    instructors: [
-      { id: 'leo', name: 'Leo', role: 'Lead Instructor', imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAEkWHakjfR-lXAg_eFX_FluQx364-d_cW15M-PVD1RuWDAzPL3_FgQL4aS50yVrwcpHW-aaIGoubGPCuDK9kMVIh-90C1oRr-URV_9J0Ab45reW4jj6pLtOU0gkclMCkh0iiVsxXpNGilhscB-lo6L4HePwiPNey99p4hxx3N7Y84lOEgiSrnWNAWdYp7G37lAEN-rsRYs1mZaRH3DKILqVl7pi3a4ERpvxOTjXNZ0YcGNjtu1CgEt3ljjl0Q0Nz5bWKzmyRm2CNA' },
-    ],
-    location: { studio: 'The Loft BK', address: 'Brooklyn', city: 'New York' },
-    date: { day: 'Sat, Oct 25', time: '2:00 PM - 5:00 PM' },
-    tags: [],
-    bankDetails: { bankName: 'Chase Bank', accountName: 'Latin Dance Hub LLC', accountNumber: 'US12 3456 7890 1234 5678' },
-  },
-];
+import { getLessonById } from '@/lib/api';
 
 export default async function LessonDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const lesson = lessons.find(l => l.id === id);
+  const lesson = await getLessonById(id);
 
   if (!lesson) {
     return <div>Lesson not found</div>;

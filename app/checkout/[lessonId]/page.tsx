@@ -1,51 +1,9 @@
 import Link from 'next/link';
-
-// 실제 프로덕션에서는 DB나 API에서 가져와야 함
-const lessons = [
-  {
-    id: '1',
-    title: 'Intermediate Salsa & Bachata Bootcamp',
-    genre: 'Salsa',
-    level: 'Intermediate',
-    price: 45,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBkeIFSCLMEI7Qa7uCEg7XxsT2jAfbkA5hNiIRQSeYLoTyBNhJVwqfO6Hk7Tipxzpc-xyH-dXIO4XkXwKI5lyauluObEALaIPmuPcGJWGsesJmP5hDCBnPe0D7sG5OlQJe5ITDuLd67jjUCGCHj7PltAKq88grbGczPWGRQVYtXN9Vc66jelMVMbPNhVEIX5dT9_tHYbmvxokaKfOvf2uHwAc8tGPyyjUkkd8eWpF_Ib3kgoQc7GYlN7J1DhwdNMfImpvl_azYI1go',
-    instructor: {
-      name: 'Marco Rivera',
-      imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCx6dfPfCafQkg9Rg28P9h-OwXiQ1HOMhjVtWUeuvq3zYkASCKesZROfeRcehv1PESreDqFtrGfLypMKpr1T32gotMJfSkoc3F7cVQBgAFVo5WEKXW7BEhp0aYTfXxr2mJJKl9wMC31WserYlHRBUVmX6BcL9nnttGP8Ee5aR4FpGrSpk9odWSvDdqQDs67CuXyzQBDQsIkHVhicG2NOs2DPPqQBOmlNSACHixas8HPFuhxj7BJS5W4YzSwzjUEl1x61Z44nFWfbzc',
-    },
-    date: {
-      day: 'Sat, Oct 28, 2023',
-      time: '14:00 - 18:00',
-    },
-    location: {
-      studio: 'Dance Fusion Studio',
-      address: '123 Rhythm Ave, Brooklyn',
-      mapUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBlGXMWuL8vsRWvgpxiQvaVcqicQXEr5NDiXM_Rrv0XNotoixRfHeLYLms7lL18RuNuwAVPmaMeSN98y3-djBwypExQOZfnaZTS06e8leSXVYQ2zBrD82OqCEq7OKMxH1RagVGFA_alKO88wmBrx5sMOr4OEy1b7xdYXAEZOTmHfSMbtwBkoUqlpuRaxS98YaN3U3YO89q9mQtr4vpSUwpgx2mcWQa6OX-nqhYo5U3pEXumNLbrxkCuF5KzsDBic-CB-jPWQgbauZk',
-    },
-  },
-  {
-    id: '2',
-    title: 'Sensual Bachata Masterclass',
-    genre: 'Bachata',
-    level: 'Intermediate',
-    price: 25,
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBzZDC2JjVAvUDC0Ug1RfBt51BiLr6DCnzIVXwS9U7LxM01gSEmOk9_ojQsKTBa0i1jqt_LCs2Gfhq2CklcTxCLlKIzohGcJOkI_OYWQupXaHjtHJlQ02_bpOpDuC0jVJBI3dAK3Z2ahiue3fte0KShxPJnrS1rSW2IXqq6c_FB4qJCNq9wMQr1msmgGPfg0XLg8Ppd7r--svgtupoNQFgZAiuTz4qEkIvvYSqJzxKQPfG--cQ4U0w1xMZGceblnHtFA4eT4PEdVl4',
-    instructor: {
-      name: 'Leo Martinez',
-      imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAEkWHakjfR-lXAg_eFX_FluQx364-d_cW15M-PVD1RuWDAzPL3_FgQL4aS50yVrwcpHW-aaIGoubGPCuDK9kMVIh-90C1oRr-URV_9J0Ab45reW4jj6pLtOU0gkclMCkh0iiVsxXpNGilhscB-lo6L4HePwiPNey99p4hxx3N7Y84lOEgiSrnWNAWdYp7G37lAEN-rsRYs1mZaRH3DKILqVl7pi3a4ERpvxOTjXNZ0YcGNjtu1CgEt3ljjl0Q0Nz5bWKzmyRm2CNA',
-    },
-    date: { day: 'Sat, Oct 25', time: '14:00 - 17:00' },
-    location: {
-      studio: 'The Loft BK',
-      address: 'Brooklyn, NY',
-      mapUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBlGXMWuL8vsRWvgpxiQvaVcqicQXEr5NDiXM_Rrv0XNotoixRfHeLYLms7lL18RuNuwAVPmaMeSN98y3-djBwypExQOZfnaZTS06e8leSXVYQ2zBrD82OqCEq7OKMxH1RagVGFA_alKO88wmBrx5sMOr4OEy1b7xdYXAEZOTmHfSMbtwBkoUqlpuRaxS98YaN3U3YO89q9mQtr4vpSUwpgx2mcWQa6OX-nqhYo5U3pEXumNLbrxkCuF5KzsDBic-CB-jPWQgbauZk',
-    },
-  },
-];
+import { getLessonById } from '@/lib/api';
 
 export default async function CheckoutPage({ params }: { params: Promise<{ lessonId: string }> }) {
   const { lessonId } = await params;
-  const lesson = lessons.find(l => l.id === lessonId);
+  const lesson = await getLessonById(lessonId);
 
   if (!lesson) {
     return <div>Lesson not found</div>;
@@ -53,6 +11,10 @@ export default async function CheckoutPage({ params }: { params: Promise<{ lesso
 
   const serviceFee = 2.0;
   const total = lesson.price + serviceFee;
+
+  // 첫 번째 장르와 첫 번째 강사 사용
+  const primaryGenre = lesson.genres[0] || 'Dance';
+  const primaryInstructor = lesson.instructors[0];
 
   return (
     <div className="font-display bg-background-page text-text-main min-h-screen flex flex-col">
@@ -87,7 +49,7 @@ export default async function CheckoutPage({ params }: { params: Promise<{ lesso
                 <div className="absolute top-4 left-4 flex gap-2">
                   <div className="flex items-center gap-1 rounded-full bg-black/70 backdrop-blur-md px-3 py-1 shadow-sm border border-white/10">
                     <span className="material-symbols-outlined text-primary text-sm">music_note</span>
-                    <span className="text-white text-[10px] font-bold uppercase tracking-wider">{lesson.genre}</span>
+                    <span className="text-white text-[10px] font-bold uppercase tracking-wider">{primaryGenre}</span>
                   </div>
                   <div className="flex items-center gap-1 rounded-full bg-black/70 backdrop-blur-md px-3 py-1 shadow-sm border border-white/10">
                     <span className="material-symbols-outlined text-primary text-sm">star</span>
@@ -102,11 +64,11 @@ export default async function CheckoutPage({ params }: { params: Promise<{ lesso
                 <div className="flex items-center gap-4 pb-6 border-b border-dashed border-zinc-800">
                   <div
                     className="bg-center bg-no-repeat bg-cover rounded-full size-14 ring-2 ring-primary ring-offset-2 ring-offset-surface"
-                    style={{ backgroundImage: `url("${lesson.instructor.imageUrl}")` }}
+                    style={{ backgroundImage: `url("${primaryInstructor.imageUrl}")` }}
                   ></div>
                   <div>
                     <p className="text-primary font-bold text-xs uppercase tracking-wide mb-0.5">Instructor</p>
-                    <p className="text-text-main text-lg font-bold">{lesson.instructor.name}</p>
+                    <p className="text-text-main text-lg font-bold">{primaryInstructor.name}</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-6">
