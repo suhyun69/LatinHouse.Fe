@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-white/10 bg-black/80 backdrop-blur-md px-6 md:px-10 py-4">
@@ -31,9 +33,9 @@ export default function Header() {
             />
           </div>
         </label>
-        <button className="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white hover:bg-orange-600 shadow-md hover:shadow-lg transition-all text-sm font-bold tracking-wide">
+        <Link href="/login" className="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white hover:bg-orange-600 shadow-md hover:shadow-lg transition-all text-sm font-bold tracking-wide">
           Log In
-        </button>
+        </Link>
       </div>
     </header>
   );
