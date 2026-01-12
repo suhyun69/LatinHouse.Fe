@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-white/10 bg-black/80 backdrop-blur-md px-6 md:px-10 py-4">
       <div className="flex items-center gap-8">
-        <div className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <div className="size-8 text-primary">
             <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
               <path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
@@ -12,10 +12,10 @@ export default function Header() {
             </svg>
           </div>
           <h2 className="text-text-main text-xl font-extrabold tracking-tight">LatinSteps</h2>
-        </div>
+        </Link>
         <div className="hidden md:flex items-center gap-8">
-          <a className="text-primary text-sm font-bold border-b-2 border-primary leading-loose" href="#">Lessons</a>
-          <a className="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="#">Instructors</a>
+          <Link className="text-primary text-sm font-bold border-b-2 border-primary leading-loose" href="/">Lessons</Link>
+          <Link className="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="/instructors">Instructors</Link>
           <a className="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="#">Events</a>
           <a className="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="#">Pricing</a>
         </div>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LatinSteps - Professional Instructors</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f45925",
+                        "primary-light": "#33150c", 
+                        "background-page": "#000000",
+                        "surface": "#121212", 
+                        "text-main": "#f9fafb", 
+                        "text-sub": "#9ca3af", 
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.8)',
+                        'soft-hover': '0 10px 30px -3px rgba(244, 89, 37, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-page min-h-screen flex flex-col text-text-main antialiased selection:bg-primary selection:text-white">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-white/10 bg-black/80 backdrop-blur-md px-6 md:px-10 py-4">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-text-main text-xl font-extrabold tracking-tight">LatinSteps</h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="#">Lessons</a>
+<a class="text-primary text-sm font-bold border-b-2 border-primary leading-loose" href="#">Instructors</a>
+<a class="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="#">Events</a>
+<a class="text-text-sub hover:text-primary text-sm font-medium leading-loose transition-colors" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-6">
+<label class="hidden lg:flex flex-col min-w-40 h-10 w-full max-w-[280px]">
+<div class="flex w-full flex-1 items-stretch rounded-full bg-zinc-900 border border-zinc-800 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all">
+<div class="text-zinc-500 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 bg-transparent border-none focus:ring-0 text-sm px-3 text-text-main placeholder:text-zinc-600" placeholder="Search instructors..." type="text"/>
+</div>
+</label>
+<button class="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white hover:bg-orange-600 shadow-md hover:shadow-lg transition-all text-sm font-bold tracking-wide">
+            Log In
+        </button>
+</div>
+</header>
+<main class="flex-grow flex flex-col">
+<div class="w-full bg-background-page px-6 md:px-20 lg:px-40 pt-12 pb-8">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-2">
+<h1 class="text-text-main text-4xl md:text-5xl font-black tracking-tight">Meet the <span class="text-primary">Masters</span></h1>
+<p class="text-text-sub text-lg max-w-2xl font-medium">Learn from world-renowned dancers and championship-winning instructors. Elevate your dance journey with the best in the industry.</p>
+</div>
+</div>
+</div>
+<div class="sticky top-[73px] z-40 bg-background-page/95 backdrop-blur-sm px-6 md:px-20 lg:px-40 py-6 border-b border-white/5">
+<div class="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-4 items-center justify-between">
+<div class="flex gap-3 overflow-x-auto w-full lg:w-auto pb-2 lg:pb-0 scrollbar-hide snap-x">
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary text-white px-5 shadow-lg shadow-primary/25 transition-all">
+<span class="text-sm font-bold">All Instructors</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface border border-zinc-800 text-text-sub hover:text-primary hover:border-primary hover:bg-white/5 px-5 transition-all">
+<span class="text-sm font-semibold">Salsa</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface border border-zinc-800 text-text-sub hover:text-primary hover:border-primary hover:bg-white/5 px-5 transition-all">
+<span class="text-sm font-semibold">Bachata</span>
+</button>
+<button class="snap-start flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-surface border border-zinc-800 text-text-sub hover:text-primary hover:border-primary hover:bg-white/5 px-5 transition-all">
+<span class="text-sm font-semibold">Kizomba</span>
+</button>
+</div>
+<div class="flex gap-3 w-full lg:w-auto">
+<div class="flex-1 lg:w-64">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-[20px] text-zinc-500">location_on</span>
+<select class="w-full bg-zinc-900 border border-zinc-800 rounded-lg pl-10 pr-4 h-10 text-sm text-text-main focus:ring-primary focus:border-primary appearance-none cursor-pointer">
+<option>All Regions</option>
+<option>New York</option>
+<option>Los Angeles</option>
+<option>Miami</option>
+<option>London</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 text-[20px] text-zinc-500 pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex-1 lg:hidden">
+<button class="w-full flex items-center justify-center gap-2 h-10 rounded-lg bg-surface border border-zinc-800 text-text-main text-sm font-bold">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+                        Filters
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<div class="px-6 md:px-20 lg:px-40 py-12 flex-1 bg-background-page">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="group flex flex-col bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Fernando Sosa" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEkWHakjfR-lXAg_eFX_FluQx364-d_cW15M-PVD1RuWDAzPL3_FgQL4aS50yVrwcpHW-aaIGoubGPCuDK9kMVIh-90C1oRr-URV_9J0Ab45reW4jj6pLtOU0gkclMCkh0iiVsxXpNGilhscB-lo6L4HePwiPNey99p4hxx3N7Y84lOEgiSrnWNAWdYp7G37lAEN-rsRYs1mZaRH3DKILqVl7pi3a4ERpvxOTjXNZ0YcGNjtu1CgEt3ljjl0Q0Nz5bWKzmyRm2CNA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="flex flex-wrap gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">Salsa On2</span>
+<span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-wider">Choreography</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold leading-tight group-hover:text-primary transition-colors">Fernando Sosa</h3>
+<p class="text-text-sub text-sm leading-relaxed line-clamp-2 italic">"Pioneer of the SOSA style and leader of Tropical Gem dance company."</p>
+<div class="flex items-center gap-2 text-zinc-500 mt-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-xs font-semibold">Milan, Italy</span>
+</div>
+<button class="mt-4 w-full h-11 flex items-center justify-center rounded-xl bg-zinc-800 border border-zinc-700 text-text-main hover:bg-primary hover:text-white hover:border-primary shadow-sm text-sm font-bold transition-all duration-300">
+                        View Profile
+                    </button>
+</div>
+</div>
+<div class="group flex flex-col bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Ataca &amp; La Alemana" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEfJ2PHz3Ztyy83SCfHk6naOG_bQ5QHmalkedT7Sgqank5InEb3blPG4ZGjMfd-x6QEwCmM8nardAzAfHGdPbfJnWZtO38a1mZA5aV86C610uxfszT05r6Af588ugufv7P6NtOLCNk0vl28wIgPPqKjaSEYyptj4Tk-5KNN6ujKULIl_gA0Hw-mCtQ7nTtFLj9h_v2sFu0cKHcrbJR--5qQvcYrekPUmWsdb6nQl_ny_OkbyWenapYppY4i1zyuVDQSAHk9Bkva38"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="flex flex-wrap gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">Bachata</span>
+<span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-wider">Sensual</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold leading-tight group-hover:text-primary transition-colors">Ataca &amp; La Alemana</h3>
+<p class="text-text-sub text-sm leading-relaxed line-clamp-2 italic">"The world's most recognized bachata couple, known for their musicality."</p>
+<div class="flex items-center gap-2 text-zinc-500 mt-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-xs font-semibold">Tampa, FL</span>
+</div>
+<button class="mt-4 w-full h-11 flex items-center justify-center rounded-xl bg-zinc-800 border border-zinc-700 text-text-main hover:bg-primary hover:text-white hover:border-primary shadow-sm text-sm font-bold transition-all duration-300">
+                        View Profile
+                    </button>
+</div>
+</div>
+<div class="group flex flex-col bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Adolfo Indacochea" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR11VK2nU3EPRlHT6fYLDTOvZ6sBrdJ9loPPzVH1t3pnFJqrdPSuQaA_vj7tSYnQbm0SlVOspCrAtmBwmCRqFC4rB292CiGXrRbWObSAc2DuuFLc-Cj9yIhJAh0nfZPdKA0802zDOJo6Y_4PBcarHvyXLQ5WpW9RiH8_CBPsZKf6vQP0eznHGc8JMxgHVK-3bBbv9kJBWc7x7H9Xo7ycDf69h8n9fVcs8yoYsMZR-_58xpUXzEW8relbFNXCTPdMEa_awT1BfrcMI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="flex flex-wrap gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">Mambo</span>
+<span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-wider">Shines</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold leading-tight group-hover:text-primary transition-colors">Adolfo Indacochea</h3>
+<p class="text-text-sub text-sm leading-relaxed line-clamp-2 italic">"Global representative of Mambo, focusing on power and technique."</p>
+<div class="flex items-center gap-2 text-zinc-500 mt-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-xs font-semibold">New York, NY</span>
+</div>
+<button class="mt-4 w-full h-11 flex items-center justify-center rounded-xl bg-zinc-800 border border-zinc-700 text-text-main hover:bg-primary hover:text-white hover:border-primary shadow-sm text-sm font-bold transition-all duration-300">
+                        View Profile
+                    </button>
+</div>
+</div>
+<div class="group flex flex-col bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Korke &amp; Judith" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV2w1ydNETaIsyHcKkNCp3GeT6tuPhLxjNEE4SX5hnNQ7Olt0hqAEI0t4g8f13uHA5F6bzXNBkH2O-_FFPnKCHKsdBxMCRrbrW-Ry9bK19AdgvPjC28up5rOIdxvfsaO4-6L_kj2SgJzD4xDUm6jasY6EdUOUl9JadoddjQ5GWyT55fsLV-CVwb63TEPhqJ5RUemmRSJgcYqKpUS-lmC6NdCvHIcSNgIZjrjkD5p90dYZ85_RxqBsLMUeKtfh36XHmXzm0WCWG0v8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="flex flex-wrap gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">Bachata</span>
+<span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-wider">Dominican</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold leading-tight group-hover:text-primary transition-colors">Korke &amp; Judith</h3>
+<p class="text-text-sub text-sm leading-relaxed line-clamp-2 italic">"Creators of the Bachata Sensual style with over 20 years experience."</p>
+<div class="flex items-center gap-2 text-zinc-500 mt-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-xs font-semibold">Cádiz, Spain</span>
+</div>
+<button class="mt-4 w-full h-11 flex items-center justify-center rounded-xl bg-zinc-800 border border-zinc-700 text-text-main hover:bg-primary hover:text-white hover:border-primary shadow-sm text-sm font-bold transition-all duration-300">
+                        View Profile
+                    </button>
+</div>
+</div>
+<div class="group flex flex-col bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Eddie Torres Jr" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2Bj2xrccfoQ1c9yTyv8gjBnAGSg4ssBYPLIEbqI2Yo6ho6eQPPI8FlXl0mzmO1NA8seEGxejZsf8qN3mIhkprjk_h2PSyetRRDF_Mc3a7aJVjx5FzbDi21hRa3SCwjZ2foONSVg5ZcnPrY_cml6ItOoRKpeczd2_2ZMc2Bsy6fjUGIV7gCJ63C8Ju3Fy4P6pO9u2ghpn1I-pH3bRFKnXecKzI9EMQ3RNjJCr3adCpecBB8s_MUh1xCTrSpYk9psGj796PLfxWV6o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="flex flex-wrap gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">Salsa On2</span>
+<span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-wider">Classic Mambo</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold leading-tight group-hover:text-primary transition-colors">Eddie Torres Jr.</h3>
+<p class="text-text-sub text-sm leading-relaxed line-clamp-2 italic">"Carrying the legacy of the Mambo King with a modern artistic twist."</p>
+<div class="flex items-center gap-2 text-zinc-500 mt-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-xs font-semibold">New York, NY</span>
+</div>
+<button class="mt-4 w-full h-11 flex items-center justify-center rounded-xl bg-zinc-800 border border-zinc-700 text-text-main hover:bg-primary hover:text-white hover:border-primary shadow-sm text-sm font-bold transition-all duration-300">
+                        View Profile
+                    </button>
+</div>
+</div>
+<div class="group flex flex-col bg-surface rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-hover transition-all duration-300 ring-1 ring-zinc-800 hover:ring-primary/40">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img alt="Sara Lopez" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz6cDqHhuCnymiWT_5qaoh_dHGjQZyzZbaQZ7bRWH7h4Czd5YWYPpnoiBZGOwMY_dr1F4hXRGfzAQnE_dTKsroBEq5_y8wIXze6MRDUPsKJwDK6tIEF74_tuyyGYMCqCy0gBWFh0UEPMzedhUb-mHy4Q4i-YfKibYaiPUgZd5s9gf_EeZ9-hj3JMq0PcLTw5GGsD_GRZg3DDtnA1ZhDD7mAlCYl6Mt_zgjCNhUPeffJSZVAaK9h59MjbdQn-TKFbnXumJmmrrU_LM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="flex flex-wrap gap-1.5 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary text-white text-[10px] font-bold uppercase tracking-wider">Kizomba</span>
+<span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-wider">Lady Styling</span>
+</div>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-2">
+<h3 class="text-text-main text-xl font-bold leading-tight group-hover:text-primary transition-colors">Sara Lopez</h3>
+<p class="text-text-sub text-sm leading-relaxed line-clamp-2 italic">"The Queen of Kizomba, worldwide reference for styling and isolation."</p>
+<div class="flex items-center gap-2 text-zinc-500 mt-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-xs font-semibold">Madrid, Spain</span>
+</div>
+<button class="mt-4 w-full h-11 flex items-center justify-center rounded-xl bg-zinc-800 border border-zinc-700 text-text-main hover:bg-primary hover:text-white hover:border-primary shadow-sm text-sm font-bold transition-all duration-300">
+                        View Profile
+                    </button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center mt-16 pb-12">
+<button class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-surface border border-zinc-800 shadow-sm hover:shadow-md hover:border-primary hover:text-primary text-text-main text-sm font-bold tracking-wide transition-all">
+                Load More Instructors
+            </button>
+</div>
+</div>
+</main>
+<footer class="bg-black border-t border-white/10 py-12 px-6">
+<div class="layout-content-container max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between gap-10">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 text-text-main">
+<div class="size-8 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xl font-extrabold tracking-tight">LatinSteps</span>
+</div>
+<p class="text-text-sub text-sm max-w-xs leading-relaxed">Connecting dancers with the best instructors worldwide. Find your rhythm today.</p>
+</div>
+<div class="flex gap-12 flex-wrap">
+<div class="flex flex-col gap-4">
+<h4 class="text-text-main font-bold text-sm uppercase tracking-wider">Company</h4>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">About Us</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Careers</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Blog</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-text-main font-bold text-sm uppercase tracking-wider">Support</h4>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Help Center</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Contact Us</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-text-main font-bold text-sm uppercase tracking-wider">Social</h4>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Instagram</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Facebook</a>
+<a class="text-text-sub hover:text-primary text-sm transition-colors" href="#">Twitter</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
