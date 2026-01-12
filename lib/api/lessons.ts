@@ -29,19 +29,28 @@ export async function getLessons(): Promise<Lesson[]> {
  * @returns Promise<Lesson[]> - 필터링된 레슨의 배열
  */
 export async function getLessonsByGenre(genre: string): Promise<Lesson[]> {
-  // 실제 프로덕션에서는 API 호출
-  // const response = await fetch(`/api/lessons?genre=${genre}`);
-  // return response.json();
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/lessons?genre=${encodeURIComponent(genre)}`, {
+      cache: 'no-store',
+    });
 
-  if (genre === 'All') {
-    return Promise.resolve(lessonsData);
+    if (!response.ok) {
+      throw new Error('Failed to fetch lessons by genre');
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching lessons by genre:', error);
+    // 에러 발생 시 fallback으로 필터링된 mock 데이터 반환
+    if (genre === 'All') {
+      return lessonsData;
+    }
+    const filtered = lessonsData.filter(lesson =>
+      lesson.genres.some(g => g.toLowerCase() === genre.toLowerCase())
+    );
+    return filtered;
   }
-
-  const filtered = lessonsData.filter(lesson =>
-    lesson.genres.some(g => g.toLowerCase() === genre.toLowerCase())
-  );
-
-  return Promise.resolve(filtered);
 }
 
 /**
