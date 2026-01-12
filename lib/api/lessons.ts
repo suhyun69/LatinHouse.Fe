@@ -5,12 +5,22 @@ import { lessonsData, Lesson } from '../data/lessons';
  * @returns Promise<Lesson[]> - 모든 레슨의 배열
  */
 export async function getLessons(): Promise<Lesson[]> {
-  // 실제 프로덕션에서는 API 호출
-  // const response = await fetch('/api/lessons');
-  // return response.json();
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/lessons`, {
+      cache: 'no-store', // 항상 최신 데이터를 가져옴
+    });
 
-  // 현재는 mock 데이터 반환
-  return Promise.resolve(lessonsData);
+    if (!response.ok) {
+      throw new Error('Failed to fetch lessons');
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching lessons:', error);
+    // 에러 발생 시 fallback으로 mock 데이터 반환
+    return lessonsData;
+  }
 }
 
 /**
