@@ -7,10 +7,175 @@ export interface Instructor {
   quote: string;
   location: string;
   bio?: string;
+  title?: string;
+  coverImage?: string;
+  about?: string;
+  phone?: string;
+  instagram?: string;
+  facebook?: string;
+  youtube?: string;
+  website?: string;
+  stats?: {
+    students: string;
+    experience: string;
+    rating: string;
+    followers: string;
+  };
+  highlights?: string[];
+  schedule?: any[];
 }
 
 // Mock 데이터
 export const instructorsData: Instructor[] = [
+  {
+    id: 'marco-rivera',
+    name: 'Marco Rivera',
+    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUZA_nUqB8X9IwCkQhATa6ybKFuDp329kCoYTSBMHyCTd6cPulFs9TtlfRfuCVDs-3zMSskWEBWvobpRmfvS0SWtBOJvgwLblpbc0xLFy-qQjVvntQwbrlMlJiPufjpk1txjYZw_nzLNxyzsu-uOoLBeVAKheUQp1v-cII2WP19Yz8HkgaMaJUtXZSiHcP6ZHHfUq99aCdF6qrK9YFIq2rD1n-ni7NgRR0lO_6xKZiCYu1aMBwQlhaTHvLShUsrHYTRGVYVq9iO84',
+    specialties: ['Salsa', 'Lead Instructor'],
+    quote: 'Master of Salsa rhythm and passionate about teaching the art of connection.',
+    location: 'New York, NY',
+    title: 'Lead Instructor (Salsa)',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAyLfxkBUXGWPPgvKoHTonPCdnDKZl5198sfki4L3R0mA_t7TDXGB-FstWPbEabvJc7DE71yhYisch0fDXZfOuz1J7aaKrD8ZW4m6DSROM4vxh6hiqZ8W46HH2bDgmM0Nikc35d8nTRepfdA9vTvq0t39Pve9IpznZ-4kUbjgbgxVHJpcqhqXoX-ksyR_1BJiFFT34qHnqWSF75qmyP96nhYhrihNc3AxcWr9gQtmxNHlR2v7Unwlj8UR8DtM69utKjN-pTJzY1pfY',
+    about: 'Over 15 years of experience teaching Salsa worldwide. Known for breaking down complex patterns into easy-to-follow steps.',
+    phone: '+1 (212) 555-0100',
+    instagram: '@marco_rivera_salsa',
+    facebook: 'Marco Rivera Dance',
+    youtube: 'MarcoRiveraDance',
+    website: 'www.marcorivera.com',
+    stats: {
+      students: '1000+',
+      experience: '15+',
+      rating: '4.9',
+      followers: '25k',
+    },
+    highlights: [],
+    schedule: [],
+  },
+  {
+    id: 'elena-cruz',
+    name: 'Elena Cruz',
+    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCcfXR_Pa3dk6zhVrmAxrrDkQVedyLMc5mpwEqRcflYsUG4iXuWIjAj-WpwvOQYUwsgB-yu2Nh05hK4KNNwkmNekgEmx5IQK8Rh7QsA-vJcu1dtAyZUWfJ8U37Cmy0ERMQUR8aKKbvvyVtB_VsFloyFDTnaT7Gb9N0U-pSItyC1TsvhY41yn_cI9ycp3MI8ksDiC4E_zqdrpkxNY64RCVeKdCGckeVYveF68JKPSYIfa5ts2332I3zNtN6gktDxSoTG8Ii2v-gyY3U',
+    specialties: ['Bachata', 'Styling'],
+    quote: 'Bringing grace and elegance to Bachata with every step.',
+    location: 'Brooklyn, NY',
+    title: 'Assistant (Bachata)',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAyLfxkBUXGWPPgvKoHTonPCdnDKZl5198sfki4L3R0mA_t7TDXGB-FstWPbEabvJc7DE71yhYisch0fDXZfOuz1J7aaKrD8ZW4m6DSROM4vxh6hiqZ8W46HH2bDgmM0Nikc35d8nTRepfdA9vTvq0t39Pve9IpznZ-4kUbjgbgxVHJpcqhqXoX-ksyR_1BJiFFT34qHnqWSF75qmyP96nhYhrihNc3AxcWr9gQtmxNHlR2v7Unwlj8UR8DtM69utKjN-pTJzY1pfY',
+    about: 'Specializing in Bachata styling and women\'s technique. Teaching dancers to express themselves through movement.',
+    phone: '+1 (718) 555-0200',
+    instagram: '@elena_cruz_dance',
+    facebook: 'Elena Cruz Bachata',
+    youtube: 'ElenaCruzDance',
+    website: 'www.elenacruz.com',
+    stats: {
+      students: '800+',
+      experience: '10+',
+      rating: '4.8',
+      followers: '18k',
+    },
+    highlights: [],
+    schedule: [],
+  },
+  {
+    id: 'leo',
+    name: 'Leo Martinez',
+    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAEkWHakjfR-lXAg_eFX_FluQx364-d_cW15M-PVD1RuWDAzPL3_FgQL4aS50yVrwcpHW-aaIGoubGPCuDK9kMVIh-90C1oRr-URV_9J0Ab45reW4jj6pLtOU0gkclMCkh0iiVsxXpNGilhscB-lo6L4HePwiPNey99p4hxx3N7Y84lOEgiSrnWNAWdYp7G37lAEN-rsRYs1mZaRH3DKILqVl7pi3a4ERpvxOTjXNZ0YcGNjtu1CgEt3ljjl0Q0Nz5bWKzmyRm2CNA',
+    specialties: ['Bachata', 'Lead Instructor'],
+    quote: 'Bringing passion and energy to every Bachata class.',
+    location: 'Manhattan, NY',
+    title: 'Lead Instructor',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAyLfxkBUXGWPPgvKoHTonPCdnDKZl5198sfki4L3R0mA_t7TDXGB-FstWPbEabvJc7DE71yhYisch0fDXZfOuz1J7aaKrD8ZW4m6DSROM4vxh6hiqZ8W46HH2bDgmM0Nikc35d8nTRepfdA9vTvq0t39Pve9IpznZ-4kUbjgbgxVHJpcqhqXoX-ksyR_1BJiFFT34qHnqWSF75qmyP96nhYhrihNc3AxcWr9gQtmxNHlR2v7Unwlj8UR8DtM69utKjN-pTJzY1pfY',
+    about: 'Expert Bachata instructor with a focus on musicality and connection. Teaching for over 12 years.',
+    phone: '+1 (646) 555-0300',
+    instagram: '@leo_bachata',
+    facebook: 'Leo Martinez Bachata',
+    youtube: 'LeoMartinezDance',
+    website: 'www.leomartinez.com',
+    stats: {
+      students: '600+',
+      experience: '12+',
+      rating: '4.9',
+      followers: '15k',
+    },
+    highlights: [],
+    schedule: [],
+  },
+  {
+    id: 'mateo-rodriguez',
+    name: 'Mateo Rodriguez',
+    location: 'NYC',
+    specialties: ['Salsa On2', 'Bachata Sensual', 'Musicality'],
+    title: 'Salsa Fusion & Bachata Instructor',
+    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDGfw0XDN_2Fu8WGEXPTRqCDtR7Q6RscJudlG1M6KGWGdzGkMKQeqLywpw-9b7XJki2dO7H3E3imNolXGL-KYLIbfKffVzetck0OuHrRsXNdGWS1CCZyA0ml_lGrEff95uZbbAMoW0XtSKpFCf30FxBRtCThUSQ-7cWbOhH9PdFKdwbfLLyVCzMMBV1tHnwRg81uEkZqySe7tsD9vMBFRLhvs8uDHbpme50zxHQijKnTgYpQZH-KPCvKS_Yyv_lQuZ3lLh3Oe7XlwU',
+    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAyLfxkBUXGWPPgvKoHTonPCdnDKZl5198sfki4L3R0mA_t7TDXGB-FstWPbEabvJc7DE71yhYisch0fDXZfOuz1J7aaKrD8ZW4m6DSROM4vxh6hiqZ8W46HH2bDgmM0Nikc35d8nTRepfdA9vTvq0t39Pve9IpznZ-4kUbjgbgxVHJpcqhqXoX-ksyR_1BJiFFT34qHnqWSF75qmyP96nhYhrihNc3AxcWr9gQtmxNHlR2v7Unwlj8UR8DtM69utKjN-pTJzY1pfY',
+    about: 'Passionate about rhythm and connection. Teaching for 10+ years in the heart of NYC. I specialize in breaking down complex patterns into leadable, musical moments. Join me on the dance floor to elevate your social dancing skills!',
+    quote: 'Passionate about rhythm and connection.',
+    phone: '+1 (212) 555-0192',
+    instagram: '@mateo_rodriguez',
+    facebook: 'Mateo Rodriguez Dance',
+    youtube: 'MateoMoves',
+    website: 'www.mateodance.com',
+    stats: {
+      students: '500+',
+      experience: '10+',
+      rating: '4.9',
+      followers: '12k',
+    },
+    highlights: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPjkXe537j1mgIwjfumKpCznbZTPSocVd4F-Z98otC9gNCpvcr3zxI74vCHzQSKYwBIt1R_xgn0YlqGWtQgpCkczwreVHaRHy8LaVndtUkfC6VhWskWMaJZ8RUYQlcE7UgLW1NoFm6jguX4iate_TQ-uzQg4QDJddH7izhMMzqlfO-Uy23gaIoGBMyVbLCVsAxs-7nhQPl8ICtjWNDsl59B_-6flz_zom3rBCNcm-zkoYkYIr9XwHOnhsdxOMSfCc97ed-hgOKU7M',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuArbCarFrk_NoZUtrcrEQBGj8Ka62zTrKBAvHum1OcHANwKiRByXk0PiOJVaOR9CMi9SS-FknGVSp00mW6xlqVtYJRSWp1P8q2Ncjyu51JbDLKLhYbvd4Mb_5hLuWyy83AjFB-WTqZZbPltvhcS49-rX-gFaok-d4GIlQi8VS8Xp5TSqX4o-zd5plJYXmH3VUc_8wCUTdhdzSZoV14_z66srfnFE2J6U18xuc66OU2-zxjuAJG4pe2HAREv4VTyFZvYZgMVqBE9DZc',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuC7nuEzgR3UBzUvNGF-C5UUQpTDGlsLMmgG1HSlYv8A3b00zD11krSlAP8ETPANPpiEf3y6OVZges1fOrQ0yM6sScWSvitRriw9P-jxmGOJ7UvmJr0N2NSSevwVjvFCxtOLg-p7GGbbrEI9xD2Bhk3ZCeDJUES-d3f2WQiyZ1j3xXiMmBT1cHAczHRzetSO284pSyTMMCoPioMFMgdsKPmqF0yavFfq21vnKfCDpQeneyhZrGgx0opN840pSJZdrmaAM3G_Mjl-CBY',
+    ],
+    schedule: [
+      {
+        id: '1',
+        date: { month: 'Oct', day: '24' },
+        level: 'Beginner',
+        levelColor: 'orange',
+        time: '7:00 PM - 8:30 PM',
+        title: 'Intro to Salsa On2',
+        location: 'Pearl Studios, NYC',
+        price: 25,
+        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCGSqMfrE4fhdAWOByd6U2Y_n-KDJRuGsJu2N4DclvZ5573VUoh838KEFttKVcVuWcrsVSKx75jFrskBtyiuxWOsTNF2R28e4QBwINPNtNxYCamMdHSoBh_S3DhAM0OjJutc33ZfRSyGP4GkMRh7SxQmfTx9X3B8rq4fibutXfzcMh1au_1fE9cWb-09830ExAQLZ7hc6gZVLcNFjI-iYPbOQ_HD-jGEY41njlZOOQpZ0EBvnlGIUYFgMrNZRSYgy00eISbAFjOAEo',
+        available: true,
+      },
+      {
+        id: '2',
+        date: { month: 'Oct', day: '26' },
+        level: 'Intermediate',
+        levelColor: 'purple',
+        time: '2:00 PM - 4:00 PM',
+        title: 'Bachata Sensual Workshop',
+        location: 'Empire Dance, NYC',
+        price: 40,
+        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMj7blt739AXsgOxolW2dkqJ5OJkn_NnMuc0fPyYoWnbNnhOSEeDuBMvRpxwUs1662B3F5oz3SY6sURglnLK9G6-TyJyCGOIWwhpf0Z2x5GdOViXNPMBppHlYfZ1cPmbu9ICUcDf4xFhj8Fu42yKhZxDCAIfVB6lloz0T6XR9bXo0HXu4Q5Ia4HDUO6oqw05DqcIYjhbqHpRuTWtDFKyNs4NxzOc7SxFLOc6-mZAz2H0SjOCa9alI2U_tgk4vXeHhw59l7K1RZaO0',
+        available: true,
+      },
+      {
+        id: '3',
+        date: { month: 'Oct', day: '28' },
+        level: 'Open Level',
+        levelColor: 'blue',
+        time: '8:00 PM - 9:00 PM',
+        title: "Men's Styling & Shines",
+        location: 'Pearl Studios, NYC',
+        price: 20,
+        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHwn8qhGWAkJ4qB4cLNGUhy8u_cELuosxSrjIaQuus0Vm6wCWhQia5RQm06YvleGvjV8avA_vDZvmCGXLdnEc4ROpFrdOKcft3Z13CKakNFyMPLvYFFoZhIArLxIk4tFfUH-DXz4boWXzdYA2cO9zn6ePHi_rTYwPfNLs6cLiMKoHAtYHO5hEM3ll9X0CFP1zEGU0pddzUeiJlACGLUOmN9y8XeBeq128LrCMSR0rr6f-Ebjw7Q87aQF9bfnUn1aJGp2BYCzNxBIc',
+        available: true,
+      },
+      {
+        id: '4',
+        date: { month: 'Oct', day: '30' },
+        level: 'Advanced',
+        levelColor: 'red',
+        time: '9:00 PM - 11:00 PM',
+        title: 'Masterclass: Spinning Techniques',
+        location: 'Ripley Grier, NYC',
+        price: 45,
+        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuALP-BcV6fGsxM91HUzrXNBpEQ1bY9k64CsdSiV0V8d4ul_NkQy8Xo7EpWxH0x4l-mMwStKqXFJEj0CzrAxKCrmhOIJtThx42NoAtnPq9j6Slps-M9wM9bcPInx7WCVRvLyd9O-lTQnw321CO1Oic9w4MRlWTM-A_Act4XRaGjAGIKOvxm1R51UmxpnH0CHg7ZfVqb7E9ckWAOV2XS2YW0eyyQV1b3m8bWRkPXIzUlCXaGCFKWk9I7XIjlIiFt7hkPbZVp0y9WZStQ',
+        available: false,
+      },
+    ],
+  },
   {
     id: 'fernando-sosa',
     name: 'Fernando Sosa',

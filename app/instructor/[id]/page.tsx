@@ -1,88 +1,9 @@
 import Link from 'next/link';
-
-// 실제 프로덕션에서는 DB나 API에서 가져와야 함
-const instructors = [
-  {
-    id: 'mateo-rodriguez',
-    name: 'Mateo Rodriguez',
-    location: 'NYC',
-    specialties: ['Salsa On2', 'Bachata Sensual', 'Musicality'],
-    title: 'Salsa Fusion & Bachata Instructor',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDGfw0XDN_2Fu8WGEXPTRqCDtR7Q6RscJudlG1M6KGWGdzGkMKQeqLywpw-9b7XJki2dO7H3E3imNolXGL-KYLIbfKffVzetck0OuHrRsXNdGWS1CCZyA0ml_lGrEff95uZbbAMoW0XtSKpFCf30FxBRtCThUSQ-7cWbOhH9PdFKdwbfLLyVCzMMBV1tHnwRg81uEkZqySe7tsD9vMBFRLhvs8uDHbpme50zxHQijKnTgYpQZH-KPCvKS_Yyv_lQuZ3lLh3Oe7XlwU',
-    coverImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAyLfxkBUXGWPPgvKoHTonPCdnDKZl5198sfki4L3R0mA_t7TDXGB-FstWPbEabvJc7DE71yhYisch0fDXZfOuz1J7aaKrD8ZW4m6DSROM4vxh6hiqZ8W46HH2bDgmM0Nikc35d8nTRepfdA9vTvq0t39Pve9IpznZ-4kUbjgbgxVHJpcqhqXoX-ksyR_1BJiFFT34qHnqWSF75qmyP96nhYhrihNc3AxcWr9gQtmxNHlR2v7Unwlj8UR8DtM69utKjN-pTJzY1pfY',
-    about: 'Passionate about rhythm and connection. Teaching for 10+ years in the heart of NYC. I specialize in breaking down complex patterns into leadable, musical moments. Join me on the dance floor to elevate your social dancing skills!',
-    phone: '+1 (212) 555-0192',
-    instagram: '@mateo_rodriguez',
-    facebook: 'Mateo Rodriguez Dance',
-    youtube: 'MateoMoves',
-    website: 'www.mateodance.com',
-    stats: {
-      students: '500+',
-      experience: '10+',
-      rating: '4.9',
-      followers: '12k',
-    },
-    highlights: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPjkXe537j1mgIwjfumKpCznbZTPSocVd4F-Z98otC9gNCpvcr3zxI74vCHzQSKYwBIt1R_xgn0YlqGWtQgpCkczwreVHaRHy8LaVndtUkfC6VhWskWMaJZ8RUYQlcE7UgLW1NoFm6jguX4iate_TQ-uzQg4QDJddH7izhMMzqlfO-Uy23gaIoGBMyVbLCVsAxs-7nhQPl8ICtjWNDsl59B_-6flz_zom3rBCNcm-zkoYkYIr9XwHOnhsdxOMSfCc97ed-hgOKU7M',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuArbCarFrk_NoZUtrcrEQBGj8Ka62zTrKBAvHum1OcHANwKiRByXk0PiOJVaOR9CMi9SS-FknGVSp00mW6xlqVtYJRSWp1P8q2Ncjyu51JbDLKLhYbvd4Mb_5hLuWyy83AjFB-WTqZZbPltvhcS49-rX-gFaok-d4GIlQi8VS8Xp5TSqX4o-zd5plJYXmH3VUc_8wCUTdhdzSZoV14_z66srfnFE2J6U18xuc66OU2-zxjuAJG4pe2HAREv4VTyFZvYZgMVqBE9DZc',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC7nuEzgR3UBzUvNGF-C5UUQpTDGlsLMmgG1HSlYv8A3b00zD11krSlAP8ETPANPpiEf3y6OVZges1fOrQ0yM6sScWSvitRriw9P-jxmGOJ7UvmJr0N2NSSevwVjvFCxtOLg-p7GGbbrEI9xD2Bhk3ZCeDJUES-d3f2WQiyZ1j3xXiMmBT1cHAczHRzetSO284pSyTMMCoPioMFMgdsKPmqF0yavFfq21vnKfCDpQeneyhZrGgx0opN840pSJZdrmaAM3G_Mjl-CBY',
-    ],
-    schedule: [
-      {
-        id: '1',
-        date: { month: 'Oct', day: '24' },
-        level: 'Beginner',
-        levelColor: 'orange',
-        time: '7:00 PM - 8:30 PM',
-        title: 'Intro to Salsa On2',
-        location: 'Pearl Studios, NYC',
-        price: 25,
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCGSqMfrE4fhdAWOByd6U2Y_n-KDJRuGsJu2N4DclvZ5573VUoh838KEFttKVcVuWcrsVSKx75jFrskBtyiuxWOsTNF2R28e4QBwINPNtNxYCamMdHSoBh_S3DhAM0OjJutc33ZfRSyGP4GkMRh7SxQmfTx9X3B8rq4fibutXfzcMh1au_1fE9cWb-09830ExAQLZ7hc6gZVLcNFjI-iYPbOQ_HD-jGEY41njlZOOQpZ0EBvnlGIUYFgMrNZRSYgy00eISbAFjOAEo',
-        available: true,
-      },
-      {
-        id: '2',
-        date: { month: 'Oct', day: '26' },
-        level: 'Intermediate',
-        levelColor: 'purple',
-        time: '2:00 PM - 4:00 PM',
-        title: 'Bachata Sensual Workshop',
-        location: 'Empire Dance, NYC',
-        price: 40,
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCMj7blt739AXsgOxolW2dkqJ5OJkn_NnMuc0fPyYoWnbNnhOSEeDuBMvRpxwUs1662B3F5oz3SY6sURglnLK9G6-TyJyCGOIWwhpf0Z2x5GdOViXNPMBppHlYfZ1cPmbu9ICUcDf4xFhj8Fu42yKhZxDCAIfVB6lloz0T6XR9bXo0HXu4Q5Ia4HDUO6oqw05DqcIYjhbqHpRuTWtDFKyNs4NxzOc7SxFLOc6-mZAz2H0SjOCa9alI2U_tgk4vXeHhw59l7K1RZaO0',
-        available: true,
-      },
-      {
-        id: '3',
-        date: { month: 'Oct', day: '28' },
-        level: 'Open Level',
-        levelColor: 'blue',
-        time: '8:00 PM - 9:00 PM',
-        title: "Men's Styling & Shines",
-        location: 'Pearl Studios, NYC',
-        price: 20,
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHwn8qhGWAkJ4qB4cLNGUhy8u_cELuosxSrjIaQuus0Vm6wCWhQia5RQm06YvleGvjV8avA_vDZvmCGXLdnEc4ROpFrdOKcft3Z13CKakNFyMPLvYFFoZhIArLxIk4tFfUH-DXz4boWXzdYA2cO9zn6ePHi_rTYwPfNLs6cLiMKoHAtYHO5hEM3ll9X0CFP1zEGU0pddzUeiJlACGLUOmN9y8XeBeq128LrCMSR0rr6f-Ebjw7Q87aQF9bfnUn1aJGp2BYCzNxBIc',
-        available: true,
-      },
-      {
-        id: '4',
-        date: { month: 'Oct', day: '30' },
-        level: 'Advanced',
-        levelColor: 'red',
-        time: '9:00 PM - 11:00 PM',
-        title: 'Masterclass: Spinning Techniques',
-        location: 'Ripley Grier, NYC',
-        price: 45,
-        imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuALP-BcV6fGsxM91HUzrXNBpEQ1bY9k64CsdSiV0V8d4ul_NkQy8Xo7EpWxH0x4l-mMwStKqXFJEj0CzrAxKCrmhOIJtThx42NoAtnPq9j6Slps-M9wM9bcPInx7WCVRvLyd9O-lTQnw321CO1Oic9w4MRlWTM-A_Act4XRaGjAGIKOvxm1R51UmxpnH0CHg7ZfVqb7E9ckWAOV2XS2YW0eyyQV1b3m8bWRkPXIzUlCXaGCFKWk9I7XIjlIiFt7hkPbZVp0y9WZStQ',
-        available: false,
-      },
-    ],
-  },
-];
+import { instructorsData } from '@/lib/data/instructors';
 
 export default async function InstructorPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const instructor = instructors.find((i) => i.id === id);
+  const instructor = instructorsData.find((i) => i.id === id);
 
   if (!instructor) {
     return <div>Instructor not found</div>;
@@ -281,44 +202,48 @@ export default async function InstructorPage({ params }: { params: Promise<{ id:
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-3">
-              <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-surface border border-zinc-800">
-                <span className="text-2xl font-bold text-white">{instructor.stats.students}</span>
-                <span className="text-xs text-text-sub uppercase tracking-wider font-semibold">Students</span>
-              </div>
-              <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-surface border border-zinc-800">
-                <span className="text-2xl font-bold text-white">{instructor.stats.experience}</span>
-                <span className="text-xs text-text-sub uppercase tracking-wider font-semibold">Years Exp</span>
-              </div>
-              <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-surface border border-zinc-800">
-                <span className="text-2xl font-bold text-white flex items-center gap-1">
-                  {instructor.stats.rating}{' '}
-                  <span className="material-symbols-outlined text-yellow-500 text-sm">star</span>
-                </span>
-                <span className="text-xs text-text-sub uppercase tracking-wider font-semibold">Rating</span>
-              </div>
-              <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-surface border border-zinc-800">
-                <span className="text-2xl font-bold text-white">{instructor.stats.followers}</span>
-                <span className="text-xs text-text-sub uppercase tracking-wider font-semibold">Followers</span>
-              </div>
-            </div>
-
-            {/* Highlights */}
-            <div className="flex flex-col gap-3">
-              <h3 className="text-lg font-bold">Highlights</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {instructor.highlights.map((img, idx) => (
-                  <div
-                    key={idx}
-                    className="aspect-square rounded-lg bg-cover bg-center cursor-pointer hover:opacity-80 transition-opacity"
-                    style={{ backgroundImage: `url('${img}')` }}
-                  ></div>
-                ))}
-                <div className="aspect-square rounded-lg bg-cover bg-center cursor-pointer flex items-center justify-center bg-zinc-900">
-                  <span className="text-sm font-bold text-white">+12</span>
+            {instructor.stats && (
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-surface border border-zinc-800">
+                  <span className="text-2xl font-bold text-white">{instructor.stats.students}</span>
+                  <span className="text-xs text-text-sub uppercase tracking-wider font-semibold">Students</span>
+                </div>
+                <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-surface border border-zinc-800">
+                  <span className="text-2xl font-bold text-white">{instructor.stats.experience}</span>
+                  <span className="text-xs text-text-sub uppercase tracking-wider font-semibold">Years Exp</span>
+                </div>
+                <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-surface border border-zinc-800">
+                  <span className="text-2xl font-bold text-white flex items-center gap-1">
+                    {instructor.stats.rating}{' '}
+                    <span className="material-symbols-outlined text-yellow-500 text-sm">star</span>
+                  </span>
+                  <span className="text-xs text-text-sub uppercase tracking-wider font-semibold">Rating</span>
+                </div>
+                <div className="flex flex-col items-center justify-center p-4 rounded-xl bg-surface border border-zinc-800">
+                  <span className="text-2xl font-bold text-white">{instructor.stats.followers}</span>
+                  <span className="text-xs text-text-sub uppercase tracking-wider font-semibold">Followers</span>
                 </div>
               </div>
-            </div>
+            )}
+
+            {/* Highlights */}
+            {instructor.highlights && instructor.highlights.length > 0 && (
+              <div className="flex flex-col gap-3">
+                <h3 className="text-lg font-bold">Highlights</h3>
+                <div className="grid grid-cols-2 gap-2">
+                  {instructor.highlights.map((img, idx) => (
+                    <div
+                      key={idx}
+                      className="aspect-square rounded-lg bg-cover bg-center cursor-pointer hover:opacity-80 transition-opacity"
+                      style={{ backgroundImage: `url('${img}')` }}
+                    ></div>
+                  ))}
+                  <div className="aspect-square rounded-lg bg-cover bg-center cursor-pointer flex items-center justify-center bg-zinc-900">
+                    <span className="text-sm font-bold text-white">+12</span>
+                  </div>
+                </div>
+              </div>
+            )}
           </aside>
 
           {/* Main Section - Schedule */}
@@ -334,93 +259,101 @@ export default async function InstructorPage({ params }: { params: Promise<{ id:
                 </button>
               </div>
             </div>
-            <div className="flex flex-col gap-4">
-              {instructor.schedule.map((lesson) => (
-                <div
-                  key={lesson.id}
-                  className={`group flex flex-col sm:flex-row bg-surface border ${
-                    lesson.available ? 'border-zinc-800 hover:border-primary/50' : 'border-zinc-800 opacity-75'
-                  } rounded-2xl overflow-hidden transition-all duration-300 ${
-                    lesson.available ? 'hover:shadow-lg hover:shadow-primary/5' : ''
-                  }`}
-                >
-                  <div
-                    className="sm:w-32 h-32 sm:h-auto bg-cover bg-center relative flex flex-col items-center justify-center text-center p-2 before:absolute before:inset-0 before:bg-black/40"
-                    style={{ backgroundImage: `url('${lesson.imageUrl}')` }}
-                  >
+            {instructor.schedule && instructor.schedule.length > 0 ? (
+              <>
+                <div className="flex flex-col gap-4">
+                  {instructor.schedule.map((lesson) => (
                     <div
-                      className={`relative z-10 ${
-                        lesson.available ? 'bg-white/10' : 'bg-white/5'
-                      } backdrop-blur-md border ${
-                        lesson.available ? 'border-white/20' : 'border-white/10'
-                      } rounded-xl p-2 min-w-[70px]`}
+                      key={lesson.id}
+                      className={`group flex flex-col sm:flex-row bg-surface border ${
+                        lesson.available ? 'border-zinc-800 hover:border-primary/50' : 'border-zinc-800 opacity-75'
+                      } rounded-2xl overflow-hidden transition-all duration-300 ${
+                        lesson.available ? 'hover:shadow-lg hover:shadow-primary/5' : ''
+                      }`}
                     >
-                      <span
-                        className={`block text-xs font-bold uppercase ${
-                          lesson.available ? 'text-white/80' : 'text-white/50'
-                        }`}
+                      <div
+                        className="sm:w-32 h-32 sm:h-auto bg-cover bg-center relative flex flex-col items-center justify-center text-center p-2 before:absolute before:inset-0 before:bg-black/40"
+                        style={{ backgroundImage: `url('${lesson.imageUrl}')` }}
                       >
-                        {lesson.date.month}
-                      </span>
-                      <span
-                        className={`block text-2xl font-extrabold ${lesson.available ? 'text-white' : 'text-white/50'}`}
-                      >
-                        {lesson.date.day}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="flex-1 p-5 flex flex-col justify-center">
-                    <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-2">
+                        <div
+                          className={`relative z-10 ${
+                            lesson.available ? 'bg-white/10' : 'bg-white/5'
+                          } backdrop-blur-md border ${
+                            lesson.available ? 'border-white/20' : 'border-white/10'
+                          } rounded-xl p-2 min-w-[70px]`}
+                        >
                           <span
-                            className={`px-2 py-0.5 rounded bg-${lesson.levelColor}-500/20 text-${lesson.levelColor}-400 text-[10px] font-bold uppercase tracking-wider border border-${lesson.levelColor}-500/20`}
+                            className={`block text-xs font-bold uppercase ${
+                              lesson.available ? 'text-white/80' : 'text-white/50'
+                            }`}
                           >
-                            {lesson.level}
+                            {lesson.date.month}
                           </span>
-                          <span className="text-xs text-text-sub">{lesson.time}</span>
+                          <span
+                            className={`block text-2xl font-extrabold ${lesson.available ? 'text-white' : 'text-white/50'}`}
+                          >
+                            {lesson.date.day}
+                          </span>
                         </div>
-                        <h4
-                          className={`text-xl font-bold ${
-                            lesson.available ? 'text-white group-hover:text-primary' : 'text-text-sub'
-                          } mb-1 transition-colors`}
-                        >
-                          {lesson.title}
-                        </h4>
-                        <p className="text-sm text-text-sub flex items-center gap-1">
-                          <span className="material-symbols-outlined text-[16px]">apartment</span>
-                          {lesson.location}
-                        </p>
                       </div>
-                      <div className="flex flex-col items-end gap-2 min-w-[100px]">
-                        <span
-                          className={`text-xl font-bold ${
-                            lesson.available ? 'text-white' : 'text-text-sub line-through'
-                          }`}
-                        >
-                          ${lesson.price}
-                        </span>
-                        <button
-                          className={`w-full py-2 px-4 ${
-                            lesson.available
-                              ? 'bg-white text-background-page hover:bg-primary hover:text-white'
-                              : 'bg-zinc-900 text-white/50 cursor-not-allowed'
-                          } font-bold text-sm rounded-lg transition-all`}
-                          disabled={!lesson.available}
-                        >
-                          {lesson.available ? 'Book Spot' : 'Sold Out'}
-                        </button>
+                      <div className="flex-1 p-5 flex flex-col justify-center">
+                        <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-4">
+                          <div>
+                            <div className="flex items-center gap-2 mb-2">
+                              <span
+                                className={`px-2 py-0.5 rounded bg-${lesson.levelColor}-500/20 text-${lesson.levelColor}-400 text-[10px] font-bold uppercase tracking-wider border border-${lesson.levelColor}-500/20`}
+                              >
+                                {lesson.level}
+                              </span>
+                              <span className="text-xs text-text-sub">{lesson.time}</span>
+                            </div>
+                            <h4
+                              className={`text-xl font-bold ${
+                                lesson.available ? 'text-white group-hover:text-primary' : 'text-text-sub'
+                              } mb-1 transition-colors`}
+                            >
+                              {lesson.title}
+                            </h4>
+                            <p className="text-sm text-text-sub flex items-center gap-1">
+                              <span className="material-symbols-outlined text-[16px]">apartment</span>
+                              {lesson.location}
+                            </p>
+                          </div>
+                          <div className="flex flex-col items-end gap-2 min-w-[100px]">
+                            <span
+                              className={`text-xl font-bold ${
+                                lesson.available ? 'text-white' : 'text-text-sub line-through'
+                              }`}
+                            >
+                              ${lesson.price}
+                            </span>
+                            <button
+                              className={`w-full py-2 px-4 ${
+                                lesson.available
+                                  ? 'bg-white text-background-page hover:bg-primary hover:text-white'
+                                  : 'bg-zinc-900 text-white/50 cursor-not-allowed'
+                              } font-bold text-sm rounded-lg transition-all`}
+                              disabled={!lesson.available}
+                            >
+                              {lesson.available ? 'Book Spot' : 'Sold Out'}
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <div className="mt-8 flex justify-center">
-              <button className="text-primary font-bold text-sm flex items-center gap-2 hover:underline">
-                View Full Schedule <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </button>
-            </div>
+                <div className="mt-8 flex justify-center">
+                  <button className="text-primary font-bold text-sm flex items-center gap-2 hover:underline">
+                    View Full Schedule <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div className="bg-surface border border-zinc-800 rounded-2xl p-12 text-center">
+                <p className="text-text-sub text-lg">No upcoming classes scheduled at the moment.</p>
+              </div>
+            )}
           </section>
         </div>
       </main>

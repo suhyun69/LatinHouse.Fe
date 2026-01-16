@@ -101,7 +101,7 @@ export default async function LessonDetailPage({ params }: { params: Promise<{ i
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {lesson.instructors.map((instructor) => (
-                  <Link key={instructor.id} href={`/instructors/${instructor.id}`} className="bg-surface border border-zinc-800 shadow-sm p-5 rounded-2xl flex items-center gap-4 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer group">
+                  <Link key={instructor.id} href={`/instructor/${instructor.id}`} className="bg-surface border border-zinc-800 shadow-sm p-5 rounded-2xl flex items-center gap-4 hover:border-primary/50 hover:shadow-lg transition-all cursor-pointer group">
                     <div className="relative">
                       <img
                         alt={instructor.name}
